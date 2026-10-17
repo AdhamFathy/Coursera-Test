@@ -1,0 +1,1531 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pregnancy Care Nutrition — CNC</title>
+<link rel="stylesheet" href="../cnc.css">
+<style>
+/* ---- lecture-specific (Thyroid MNT) ---- */
+.nt1{text-transform:none}
+.pnl{position:absolute;left:40px;right:30px}
+.pnl-t{font-size:30px;font-weight:700;line-height:1.14;letter-spacing:.005em}
+.pnl-s{font-size:13.5px;font-weight:500;opacity:.92;margin-top:12px;line-height:1.45}
+.bi{width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.2);color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+.bi .ico{width:30px;height:30px;stroke-width:1.6}
+.big{font-size:24px;font-weight:300;line-height:1.42;color:var(--p);margin:0}
+.big b{font-weight:700;color:var(--o)}
+.or .big,.or .big b{color:#fff}
+.rw{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--tx);line-height:1.45}
+.rw:last-child{border-bottom:0}
+.rw b{color:var(--p)}
+.rw .bdg{flex:none}
+.card .rw .bdg{background:#fff}
+.tl{background:var(--os);border-radius:14px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.5;color:var(--tx)}
+.tl b{color:var(--p)}
+.tl .bdg{background:#fff}
+.tl.on{background:var(--og);color:#fff}
+.tl.on b{color:#fff}
+.tl.on .bdg{background:rgba(255,255,255,.22);color:#fff}
+.tl .h3{font-size:15.5px;font-weight:700;color:var(--p);line-height:1.25}
+.tl.on .h3{color:#fff}
+*:has(> .ft2){counter-reset:ft}
+.ft2{counter-increment:ft;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;gap:10px;background:var(--os);border-radius:16px;padding:14px 16px 18px;font-size:19px;font-weight:700;color:var(--p);line-height:1.28;min-height:0}
+.ft2:before{content:counter(ft,decimal-leading-zero);align-self:flex-start;font-size:24px;font-weight:200;color:var(--o);line-height:1;letter-spacing:-.02em}
+.ft2.on:before{color:rgba(255,255,255,.9)}
+.ft2.cnt{counter-increment:none;justify-content:center}
+.ft2.cnt:before{display:none}
+.xl > .ft2 .bdg{width:132px;height:132px}
+.xl > .ft2 .bdg .ico{width:62px;height:62px;stroke-width:1.4}
+.xl > .ft2{font-size:23px;padding:16px 18px 26px}
+.xl > .ft2:before{font-size:30px}
+.mid > .ft2 .bdg{width:104px;height:104px}
+.mid > .ft2 .bdg .ico{width:50px;height:50px;stroke-width:1.5}
+.mid > .ft2{font-size:21px}
+.x5 > .ft2{font-size:19px;padding:14px 12px 22px}
+.x5 > .ft2 .bdg{width:116px;height:116px}
+.cmp > .ft2{padding:10px 14px 12px;gap:6px;font-size:18px}
+.cmp > .ft2:before{font-size:20px}
+.cmp > .ft2 .bdg{width:60px;height:60px}
+.cmp > .ft2 .bdg .ico{width:29px;height:29px}
+.cmp > .ft2 small{font-size:13.5px;margin-top:2px}
+.ft2 .bdg{width:76px;height:76px;background:#fff;flex:none}
+.ft2 .bdg .ico{width:36px;height:36px;stroke-width:1.6}
+.ft2.on{background:var(--og);color:#fff}
+.ft2.on .bdg{background:rgba(255,255,255,.22);color:#fff}
+.ft2 small{display:block;font-size:15px;font-weight:500;color:var(--tx);margin-top:4px}
+.ft2.on small{color:#fff}
+.ag{display:grid;grid-template-columns:34px 38px 1fr auto;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.ag:last-child{border-bottom:0}
+.ag .no{font-size:30px;font-weight:100;color:var(--o);line-height:1}
+.ag b{font-size:18px;color:var(--p)}
+.ag small{display:block;font-size:11px;font-weight:600;color:var(--mut);margin-top:2px;letter-spacing:.04em}
+.ag .bdg{background:var(--os2)}
+.stat{display:flex;align-items:center;gap:16px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.3)}
+.stat:last-child{border-bottom:0}
+.stat .k{font-size:13px;font-weight:700;letter-spacing:.16em;opacity:.9;width:66px}
+.stat .v{font-size:64px;font-weight:200;line-height:.9;letter-spacing:-.02em}
+.stat .v small{font-size:18px;font-weight:600;letter-spacing:0;margin-left:6px}
+.inv{display:grid;grid-template-columns:200px 1fr;border-top:1px solid var(--line)}
+.inv>div{padding:14px 0;border-bottom:1px solid var(--line);font-size:16px;color:var(--tx);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.inv .k{font-weight:700;color:var(--p)}
+.inv .th{font-size:9px;font-weight:700;letter-spacing:.18em;color:var(--o);text-transform:uppercase;border-bottom:2px solid var(--o)}
+.vp{display:inline-flex;align-items:center;gap:6px;background:var(--os);border-radius:10px;padding:6px 12px;font-size:15px;font-weight:600;color:var(--p)}
+.vp em{font-style:normal;color:var(--o);font-weight:700}
+.vp.flag{background:var(--o);color:#fff}
+.vp.flag em{color:#fff}
+.mo{display:flex;align-items:center;gap:14px;background:var(--os);border-radius:14px;padding:14px 18px;font-size:19px;font-weight:600;color:var(--p);line-height:1.5}
+.mo .no .n{color:#fff}
+.mo .no{width:34px;height:34px;border-radius:50%;background:var(--o);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"LS Mont";font-size:15px;font-weight:700;flex:none}
+.orw{display:flex;align-items:center;gap:10px;justify-content:flex-start;font-size:13px;font-weight:700;color:var(--o);padding:0 18px}
+.orw:before,.orw:after{content:"";height:1px;background:var(--oline);flex:1}
+.flowc{display:flex;align-items:center;gap:8px}
+.flowc .st{flex:1;background:var(--os);border-radius:12px;padding:10px 12px;display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700;color:var(--p);line-height:1.25;min-height:58px}
+.flowc .st.on{background:var(--o);color:#fff}
+.flowc .st.on .bdg{background:rgba(255,255,255,.22);color:#fff}
+.flowc .st .bdg{background:#fff}
+.flowc .ar3{display:flex;flex-direction:column;align-items:center;gap:2px;flex:none;font-size:9.5px;font-weight:700;color:var(--o);letter-spacing:.06em}
+.flowc .ar3 svg{width:30px;height:14px}
+.lane{background:var(--os);border-radius:14px;padding:12px 12px;display:flex;flex-direction:column;gap:10px}
+.lane .lh{font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--o);text-align:center;margin-bottom:2px}
+.lane.cl{background:#FFF9F4;border:1.5px dashed var(--oline)}
+.bx{background:#fff;border-radius:10px;padding:13px 12px;font-size:15px;font-weight:700;color:var(--p);line-height:1.3;display:flex;align-items:center;gap:8px}
+.bx.on{background:var(--o);color:#fff}
+.bx.pu{background:var(--p);color:#fff}
+.bx small{font-weight:500;color:var(--mut);font-size:12.5px}
+.bx.on small{color:rgba(255,255,255,.85)}
+.tg{display:inline-block;background:var(--o);color:#fff;border-radius:8px;padding:2px 7px;font-size:10px;font-weight:700;letter-spacing:.06em}
+.dn3{display:flex;justify-content:center;color:var(--o)}
+.dn3 svg{width:14px;height:16px}
+.tft{display:grid;grid-template-columns:96px 96px 96px 1fr;align-items:center;column-gap:10px}
+.tft>div{height:40px;display:flex;align-items:center;border-bottom:1px solid var(--line);font-size:15px;color:var(--tx)}
+.tft .th{font-size:9.5px;font-weight:700;letter-spacing:.16em;color:var(--o);border-bottom:2px solid var(--o);height:32px}
+.tft .cd{font-weight:700;color:var(--p)}
+.lv{display:inline-flex;align-items:center;gap:5px;border-radius:9px;padding:4px 10px;font-size:13px;font-weight:700}
+.lv .ico{width:12px;height:12px;stroke-width:2.6}
+.lv.h{background:var(--o);color:#fff}
+.lv.l{background:#EFEBF4;color:var(--p)}
+.lv.n{background:#F3F1EF;color:var(--mut)}
+.el{width:96px;height:96px;border-radius:16px;background:var(--og);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none}
+.el b{font-size:44px;font-weight:600;line-height:1;color:inherit !important}
+.el small{font-size:12.5px;font-weight:700;letter-spacing:.12em;margin-top:4px}
+.el.pu{background:var(--p)}
+.hero{position:relative;overflow:hidden}
+.wmw{position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;border-radius:inherit;pointer-events:none}
+.hero .wmk{position:absolute;right:-10px;bottom:-30px;font-size:220px;font-weight:700;line-height:1;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.2);pointer-events:none}
+.hero > *:not(.wmw){position:relative}
+.rda{display:grid;grid-template-columns:var(--rl,170px) 1fr 170px;align-items:center;gap:18px;padding:30px 0;border-bottom:1px solid var(--line)}
+.rda:last-child{border-bottom:0}
+.rda b{font-size:21px;color:var(--p);line-height:1.2}
+.rda .tr{height:16px;border-radius:8px;background:var(--os);position:relative}
+.rda .tr i{position:absolute;top:0;bottom:0;border-radius:8px;background:var(--og)}
+.rda .v{font-size:50px;font-weight:200;color:var(--o);text-align:right;line-height:1;letter-spacing:-.02em}
+.rda .v small{font-size:14px;font-weight:700;letter-spacing:0;margin-left:3px}
+.pt{position:relative;border-radius:12px;overflow:hidden;background:var(--os)}
+.pt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.pt span{position:absolute;left:8px;bottom:8px;background:#fff;color:var(--p);border-radius:9px;padding:4px 10px;font-size:13px;font-weight:700}
+.hi4{display:flex;flex-direction:column;border-radius:14px;overflow:hidden;background:#fff;border:1.5px solid var(--line)}
+.hi4 .pt{border-radius:0;flex:1}
+.hi4 .nb{padding:12px 16px 14px;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.hi4 .nb .v{font-size:42px;font-weight:200;color:var(--o);line-height:.9;letter-spacing:-.02em}
+.hi4 .nb .v small{font-size:13px;font-weight:700;letter-spacing:0;margin-left:3px}
+.hi4 .nb b{font-size:16px;color:var(--p);line-height:1.2}
+.ibar{display:grid;grid-template-columns:170px 120px 1fr 60px;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid var(--line);font-size:17px}
+.ibar:last-child{border-bottom:0}
+.ibar b{color:var(--p)}
+.ibar .tr{height:14px;border-radius:7px;background:var(--os);position:relative}
+.ibar .tr i{position:absolute;left:0;top:0;bottom:0;border-radius:7px;background:var(--og)}
+.ibar .v{font-size:30px;font-weight:300;color:var(--o);text-align:right}
+.ibar.th{font-size:9.5px;font-weight:700;letter-spacing:.16em;color:var(--o);text-transform:uppercase;border-bottom:2px solid var(--o);padding:0 0 8px}
+.qbig{font-family:"LS Ar",sans-serif;direction:rtl;font-size:92px;font-weight:700;line-height:1.2;color:#fff;text-align:center}
+.rwd{display:inline-flex;align-items:center;gap:12px;background:var(--p);color:#fff;border-radius:26px;padding:10px 22px 10px 14px;font-family:"LS Ar",sans-serif;font-size:19px;font-weight:600;direction:rtl}
+.rwd .bdg{background:rgba(255,255,255,.18);color:#fff;width:34px;height:34px}
+.cy{position:relative}
+.cy .nd{position:absolute;transform:translate(-50%,-50%);width:172px;background:#fff;border:1.5px solid var(--oline);border-radius:13px;padding:9px 11px;display:flex;align-items:center;gap:9px;font-size:13.6px;font-weight:700;color:var(--p);line-height:1.25;box-shadow:0 6px 16px rgba(72,55,97,.06)}
+.cy .nd i.no{font-style:normal;width:24px;height:24px;border-radius:50%;background:var(--o);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;flex:none}
+.cy .ct{position:absolute;transform:translate(-50%,-50%);width:132px;height:132px;border-radius:50%;background:var(--p);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-size:12.5px;font-weight:700;line-height:1.3;box-shadow:0 0 0 9px #F1EEF5}
+.cy .ct .ico{width:24px;height:24px;margin-bottom:4px}
+.chain{display:flex;align-items:center;gap:8px}
+.chain .s{flex:1;background:var(--og);color:#fff;border-radius:14px;padding:16px 16px;display:flex;flex-direction:column;gap:6px;font-size:18px;font-weight:700;line-height:1.25;min-height:96px;justify-content:center}
+.chain .s small{font-size:11px;font-weight:700;letter-spacing:.14em;opacity:.85}
+.chain svg{width:26px;height:16px;flex:none;color:var(--o)}
+.fn{flex:1;background:#fff;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;font-size:17px;font-weight:700;color:var(--p);line-height:1.25;padding:16px 10px}
+.fn .bdg{width:84px;height:84px;background:var(--os2)}
+.fn .bdg .ico{width:40px;height:40px;stroke-width:1.5}
+.fn.on{background:var(--og);color:#fff}
+.fn.on .bdg{background:rgba(255,255,255,.22);color:#fff}
+.fa{display:flex;flex-direction:column;align-items:center;gap:6px;flex:none;font-size:13px;font-weight:700;color:var(--o);letter-spacing:.04em}
+.fa svg{width:44px;height:18px}
+.qwm{position:absolute;right:30px;bottom:-60px;font-size:420px;font-weight:700;line-height:1;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.3)}
+.ref{font-size:12px;font-weight:500;color:var(--mut);line-height:1.4;padding-top:8px;border-top:1px dashed var(--oline)}
+.ref:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--o);margin-right:7px;vertical-align:1px}
+.sig3{display:flex;flex-direction:column;align-items:center;gap:10px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:14px;padding:16px 8px;font-size:16px;font-weight:700;text-align:center}
+.bdg > .ico,.bi > .ico{width:max(16px,46%) !important;height:max(16px,46%) !important}
+.sig2{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);border-radius:12px;padding:12px 16px;font-size:17px;font-weight:700}
+.sel{display:grid;grid-template-columns:34px 1fr 90px 130px 120px;align-items:center;column-gap:10px}
+.sel>div{height:30px;display:flex;align-items:center;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--tx)}
+.sel .th{font-size:9px;font-weight:700;letter-spacing:.16em;color:var(--o);border-bottom:2px solid var(--o);height:28px}
+.sel .no{font-size:20px;font-weight:200;color:var(--o)}
+.sel .nm{font-weight:700;color:var(--p)}
+.sel .nm small{font-weight:500;color:var(--mut);margin-left:6px;font-size:12.5px}
+.sel .mc{font-weight:700;color:var(--o);font-size:15.5px}
+.sel .tr{height:9px;border-radius:5px;background:var(--os);position:relative;width:100%}
+.sel .tr i{position:absolute;left:0;top:0;bottom:0;border-radius:5px;background:var(--og)}
+.idd{display:grid;grid-template-columns:190px 1fr;column-gap:16px}
+.idd>div{padding:20px 0;border-bottom:1px solid var(--line);font-size:18px;color:var(--tx);display:flex;align-items:center;gap:10px}
+.idd .k{font-weight:700;color:var(--p)}
+.idd .th{font-size:9.5px;font-weight:700;letter-spacing:.16em;color:var(--o);border-bottom:2px solid var(--o);padding:0 0 8px}
+.wsx{display:flex;flex-direction:column;gap:10px}
+.dx{background:var(--os);border-radius:14px;padding:16px 18px;display:flex;flex-direction:column;gap:10px}
+.dx .hh{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:700;color:var(--p);margin-bottom:4px}
+.dx .dr{flex:1;display:flex;align-items:center;gap:12px;background:#fff;border-radius:12px;padding:0 16px;font-size:19px;font-weight:600;color:var(--p);max-height:62px}
+.dx .dot2{width:10px;height:10px;border-radius:50%;background:var(--o);flex:none}
+.dx.on .dr{background:rgba(255,255,255,.18);color:#fff}
+.dx.on .dot2{background:#fff}
+.dx.on .bdg{background:rgba(255,255,255,.22);color:#fff}
+.dx .chips{display:flex;flex-wrap:wrap;gap:7px}
+.dx .chip{background:#fff}
+.dx.on{background:var(--og)}
+.dx.on .hh{color:#fff}
+.dx.on .chip{background:rgba(255,255,255,.2);color:#fff}
+.dx.on .chip .dot{background:#fff}
+.vrs{background:#fff}
+.vrs .vph{position:absolute;left:0;top:0;bottom:0;width:470px;overflow:hidden}
+.vrs .vph img{width:100%;height:100%;object-fit:cover;display:block}
+.vrs .vtx{position:absolute;left:470px;right:0;top:0;bottom:0;background:radial-gradient(circle at 80% 15%,#FFA266 0%,#FF781D 46%,#EF620C 100%);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:"LS Ar",sans-serif;direction:rtl;padding:0 36px 40px}
+.vrs .vk{font-size:22px;font-weight:500;opacity:.92}
+.vrs .vq{font-size:44px;font-weight:700;line-height:1.7;margin:12px 0 8px}
+.vrs .vr{font-size:15px;font-weight:500;opacity:.9}
+.vrs .vl{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);background:#fff;border-radius:12px;padding:10px 16px}
+.vrs .vl img{height:30px;display:block}
+
+/* ---- lecture-specific (Hypertension MNT) ---- */
+.panel.pp{background:#2b2b2b;overflow:hidden}
+.pimg{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover;display:block}
+/* normal BP */
+.bpn{display:flex;flex-direction:column;justify-content:center;padding:26px 34px;gap:6px}
+.bpn .k{font-size:15px;font-weight:700;letter-spacing:.26em;opacity:.92}
+.bpn .v{font-size:150px;font-weight:100;line-height:.95;letter-spacing:-.04em}
+.bpn .v .lt{font-size:80px;font-weight:200;margin-right:6px;vertical-align:28px}
+.bpn .u{font-size:22px;font-weight:600}
+.bpn.lt2 .k{color:var(--o)}
+.bpn.lt2 .v{color:var(--o)}
+.bpn.lt2 .u{color:var(--p)}
+.bpn.lt2 .wmk{-webkit-text-stroke:1.5px rgba(255,120,29,.2)}
+/* hypertension rows */
+.hx{flex:1;display:flex;align-items:center;gap:20px;background:var(--os);border-radius:16px;padding:14px 24px;font-size:24px;font-weight:600;color:var(--p);line-height:1.35}
+.hx .bdg{width:72px;height:72px;background:#fff}
+.hx.on{background:var(--og);color:#fff}
+.hx.on .bdg{background:rgba(255,255,255,.22);color:#fff}
+.hx.on .arr{color:#fff}
+/* target */
+.tgt{display:flex;flex-direction:column;justify-content:center;padding:24px 30px;gap:8px}
+.tgt .hh{display:flex;align-items:center;gap:14px;font-size:23px;line-height:1.25}
+.tgt .hh b{color:var(--p)}
+.tgt.or .hh b{color:#fff}
+.tgt .v{font-size:128px;font-weight:100;line-height:1;letter-spacing:-.04em;color:var(--o);margin-top:10px}
+.tgt.or .v{color:#fff}
+.tgt .sl{font-weight:100;opacity:.6;margin:0 2px}
+.tgt .u{font-size:21px;font-weight:600;color:var(--p)}
+.tgt.or .u{color:#fff}
+/* prevention lead */
+.pv{font-size:20px;font-weight:600;color:var(--p);background:var(--os);border-radius:22px;padding:8px 18px}
+/* 30 min */
+.m30{font-size:120px;font-weight:100;line-height:.85;letter-spacing:-.04em;flex:none;display:flex;flex-direction:column}
+.m30 small{font-size:16px;font-weight:700;letter-spacing:.2em;margin-top:8px}
+/* DASH acronym */
+.dsh{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dsh div{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:12px 18px}
+.dsh b{font-size:56px;font-weight:700;line-height:1;width:44px}
+.dsh span{font-size:23px;font-weight:600}
+/* macronutrient tiles */
+.mg{background:var(--os);border-radius:16px;padding:16px 20px;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.mg .hh{display:flex;align-items:center;gap:12px}
+.mg .hh b{font-size:23px;color:var(--p)}
+.mg .hh .bdg{background:#fff;width:52px;height:52px}
+.mg .sv{font-size:64px;font-weight:100;color:var(--o);line-height:1.05;letter-spacing:-.03em}
+.mg .nt2{font-size:18px;font-weight:600;color:var(--tx)}
+.mg.on{background:var(--og)}
+.mg.on .hh b,.mg.on .sv,.mg.on .nt2{color:#fff}
+.mg.on .bdg{background:rgba(255,255,255,.22);color:#fff}
+/* fat rows */
+.fr3{flex:1;display:flex;align-items:center;justify-content:space-between;background:var(--os);border-radius:16px;padding:0 30px}
+.fr3 .k{font-size:28px;font-weight:700;color:var(--p)}
+.fr3 .v{font-size:72px;font-weight:100;color:var(--o);letter-spacing:-.03em;line-height:1}
+.fr3 .v small{font-size:30px;font-weight:300}
+.fr3.on{background:var(--og)}
+.fr3.on .k,.fr3.on .v{color:#fff}
+/* micronutrient overview */
+.mn{background:var(--os);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:18px}
+.mn .el{width:150px;height:150px;border-radius:24px}
+.mn .el b{font-size:68px}
+.mn .nm{font-size:24px;color:var(--p)}
+.mn .ar2{display:inline-flex;align-items:center;gap:6px;background:#fff;border-radius:20px;padding:6px 14px;font-size:15px;font-weight:700;color:var(--o)}
+.mn .ar2 .ico{width:16px;height:16px;stroke-width:2.4}
+.mn.on{background:var(--og)}
+.mn.on .el{background:#fff;color:var(--o)}
+.mn.on .nm{color:#fff}
+/* sodium */
+.na77{display:flex;flex-direction:column;justify-content:center;padding:22px 28px;gap:10px}
+.pc{font-size:110px;font-weight:100;line-height:.9;letter-spacing:-.04em;flex:none}
+.pc small{font-size:40px;font-weight:300}
+.pc.o{color:var(--o);font-size:72px}
+.pc.o small{font-size:28px}
+.exm{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.18);border-radius:12px;padding:10px 14px;font-size:20px;font-weight:600}
+.exm .ico{width:22px;height:22px}
+.sx2{background:var(--os);border-radius:14px;padding:12px 16px;display:flex;flex-direction:column;gap:4px}
+.sx2 span{font-size:19px;font-weight:700;color:var(--p)}
+/* potassium */
+.kv{display:flex;align-items:center;gap:18px;background:var(--os);border-radius:16px;padding:14px 22px;color:var(--p)}
+.kv .v{font-size:72px;font-weight:100;color:var(--o);line-height:.9;letter-spacing:-.03em}
+.kv b{display:block;font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:var(--o)}
+.kv span{display:block;font-size:26px;font-weight:700}
+.kv .ico{width:52px;height:52px;margin-left:auto;color:var(--o);stroke-width:1.4}
+.kv.on{background:var(--og);color:#fff}
+.kv.on .v,.kv.on b,.kv.on .ico{color:#fff}
+.pt span{font-size:17px;padding:5px 12px}
+.srcp{flex:1;display:flex;align-items:center;justify-content:center;background:var(--os);border-radius:12px;padding:12px;font-size:20px;font-weight:700;color:var(--p)}
+.srcp .ico{display:none}
+/* magnesium sources */
+.sr3{display:flex;align-items:center;gap:12px;background:#fff;border-radius:12px;padding:14px 16px;font-size:20px;font-weight:700;color:var(--p)}
+.sr3 .ico{width:28px;height:28px;color:var(--o)}
+/* tips */
+.tp{display:flex;align-items:center;gap:16px;background:var(--os);border-radius:16px;padding:16px 20px;font-size:21px;font-weight:600;color:var(--p);line-height:1.38;position:relative}
+.tp .no{position:absolute;left:18px;top:12px;font-size:22px;font-weight:200;color:var(--o)}
+.tp .bdg{width:72px;height:72px;background:#fff;margin-top:14px}
+.tp.on{background:var(--og);color:#fff}
+.tp.on .no{color:#fff}
+.tp.on .bdg{background:rgba(255,255,255,.22);color:#fff}
+.ref{font-size:14px}
+.big5 > .ft2{font-size:22px;padding:18px 14px 30px;justify-content:space-evenly}
+.big5 > .ft2 .bdg{width:132px;height:132px}
+.big5 > .ft2:before{font-size:30px}
+.tp{font-size:20px;padding:14px 18px}
+.tp .bdg{width:62px;height:62px;margin-top:10px}.tgt .v{font-size:112px}
+.fr3.on .f{border-bottom-color:#fff}
+.dsh{grid-template-columns:1fr;gap:9px}
+.dsh div{padding:8px 20px}
+.dsh b{font-size:50px;width:48px}
+.dsh span{font-size:26px}
+.big5 > .ft2 .bdg{width:144px;height:144px}
+.big5 > .ft2 .bdg .ico{width:66px;height:66px}
+.big5 > .ft2{font-size:23px}
+.ca-row{align-items:stretch !important}
+.ca-row .fn{font-size:21px;gap:12px;padding:10px}
+.ca-row .fn .bdg{width:80px;height:80px}
+.ca-row .fa{justify-content:center;font-size:26px}
+.hx30{flex:1.5 !important}
+/* ---- lecture-specific (Vitamins & Minerals) ---- */
+.ct{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--o);margin-bottom:10px}
+.ct .ico{width:17px;height:17px}
+.or .ct{color:rgba(255,255,255,.92)}
+/* photo panel badge */
+.vb{position:absolute;left:22px;bottom:22px;min-width:84px;height:84px;padding:0 14px;border-radius:20px;background:#fff;color:var(--o);display:flex;align-items:center;justify-content:center;font-size:46px;font-weight:700;letter-spacing:-.02em;box-shadow:0 10px 26px rgba(0,0,0,.18)}
+.vb small{font-size:22px;font-weight:600;margin-left:2px}
+/* monograph */
+.vh{display:flex;flex-direction:column;gap:10px}
+.vh .h1{font-size:28px}
+.vh .h1 small{font-size:18px;font-weight:300;color:var(--o);text-transform:none;margin-left:6px}
+.fnc{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.fnc .k{font-size:11px;font-weight:700;letter-spacing:.18em;color:var(--o);margin-right:4px}
+.fnc .chip{font-size:17px;padding:8px 16px 8px 12px;background:var(--os)}
+.arc{direction:rtl;display:flex;flex-wrap:wrap;gap:8px;align-content:flex-start}
+.arc span{font-family:"LS Ar",sans-serif;font-size:19px;font-weight:600;color:var(--p);background:#fff;border-radius:12px;padding:6px 14px;line-height:1.5}
+.card.wh .arc span{background:var(--os)}
+.arc .sh{flex-basis:100%;background:none !important;padding:0 2px !important;font-size:16px !important;color:var(--o) !important;font-weight:700 !important}
+.or .arc span{background:rgba(255,255,255,.18);color:#fff}
+ul.arl{direction:rtl;list-style:none;margin:0;padding:0}
+ul.arl li{position:relative;font-family:"LS Ar",sans-serif;font-size:19px;font-weight:600;color:var(--p);line-height:1.5;padding:5px 18px 5px 0;border-bottom:1px dashed var(--oline)}
+ul.arl li:last-child{border-bottom:0}
+ul.arl li:before{content:"";position:absolute;right:2px;top:17px;width:7px;height:7px;border-radius:50%;background:var(--o)}
+ul.arl.two{columns:2;column-gap:22px}
+ul.arl.two li{break-inside:avoid}
+ul.arl .lead{font-weight:700;color:var(--o);padding-right:0}
+ul.arl .lead:before{display:none}
+.dose{display:flex;align-items:center;gap:18px;padding:14px 22px !important}
+.dose .ct{margin:0;white-space:nowrap}
+.dose .cn{font-size:24px;font-weight:700;white-space:nowrap}
+.dose .dv{display:flex;flex-wrap:wrap;gap:8px;margin-left:auto;justify-content:flex-end}
+.dose .dv span{background:rgba(255,255,255,.18);border-radius:10px;padding:6px 12px;font-size:17px;font-weight:600;white-space:nowrap}
+.dose .dv span.ar{font-family:"LS Ar",sans-serif;direction:rtl}
+/* big rows (shared) */
+.rw2{flex:1;display:flex;align-items:center;gap:18px;background:var(--os);border-radius:16px;padding:12px 22px;font-size:22px;font-weight:600;color:var(--p);line-height:1.35}
+.rw2 .bdg{width:66px;height:66px;background:#fff;flex:none}
+.rw2.on{background:var(--og);color:#fff}
+.rw2.on .bdg{background:rgba(255,255,255,.22);color:#fff}
+.rw2 .arr{color:var(--o)}
+.rw2.on .arr{color:#fff}
+.rw2 small{display:block;font-size:17px;font-weight:500;margin-top:4px;opacity:.95}
+/* investigations */
+.iv{display:flex;flex-direction:column;gap:10px;padding:20px 24px}
+.iv .no{font-size:44px;font-weight:100;color:var(--o);line-height:.8}
+.iv h3{margin:0;font-size:24px;font-weight:700;color:var(--p)}
+.iv .ln{display:flex;align-items:center;gap:12px;background:#fff;border-radius:12px;padding:12px 16px;font-size:18px;font-weight:500;color:var(--tx);line-height:1.4}
+.iv .ln b{color:var(--p)}
+.iv .ln .eqv{margin-left:auto;background:var(--o);color:#fff;border-radius:9px;padding:4px 10px;font-size:15px;font-weight:700;white-space:nowrap}
+.or.iv h3{color:#fff}
+.or.iv .ln{background:rgba(255,255,255,.18);color:#fff}
+.or.iv .ln b{color:#fff}
+.or.iv .ln .eqv{background:#fff;color:var(--o)}
+/* fraction formula */
+.frm{display:flex;align-items:center;gap:20px;font-size:28px;font-weight:600;color:var(--p)}
+.frm .fr2{display:inline-flex;flex-direction:column;align-items:center}
+.frm .fr2 span{padding:4px 18px}
+.frm .fr2 span:first-child{border-bottom:3px solid var(--o)}
+.frm .op{font-size:30px;font-weight:300;color:var(--o)}
+.frm .res{font-size:58px;font-weight:100;color:var(--o);letter-spacing:-.02em}
+/* write-in lines */
+.wl{display:block;height:44px;border-bottom:2px dotted rgba(255,255,255,.95)}
+/* chains */
+.chn{display:flex;align-items:stretch;gap:8px}
+.chn .s{flex:1;background:var(--os);border-radius:14px;padding:14px 16px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:19px;font-weight:700;color:var(--p);line-height:1.3}
+.chn .s.on{background:var(--og);color:#fff}
+.chn .a{flex:none;display:flex;align-items:center;color:var(--o)}
+.chn .a svg{width:30px;height:18px}
+/* numbered list in cards (big) */
+.nl2{display:grid;gap:8px}
+.nl2 div{display:flex;align-items:center;gap:14px;background:#fff;border-radius:12px;padding:10px 16px;font-size:19px;font-weight:600;color:var(--p);line-height:1.3}
+.nl2 div b{font-size:24px;font-weight:200;color:var(--o);width:30px;flex:none}
+.or .nl2 div{background:rgba(255,255,255,.16);color:#fff}
+.or .nl2 div b{color:#fff}
+/* best-foods slides */
+.bf2{direction:rtl;background:var(--os);border-radius:18px;padding:18px 22px;display:flex;flex-direction:column;gap:12px}
+.bf2 h3{margin:0;display:flex;align-items:center;gap:12px;font-family:"LS Ar",sans-serif;font-size:26px;font-weight:700;color:var(--p)}
+.bf2 h3 .bdg{width:52px;height:52px;background:#fff}
+.bf2.on{background:var(--og)}
+.bf2.on h3{color:#fff}
+.bf2.on h3 .bdg{background:rgba(255,255,255,.22);color:#fff}
+.bf2 .arc span{font-size:20px}
+.bf2 .en{direction:ltr;font-family:"LS Mont",sans-serif !important}
+
+/* section divider (from Pharmacotherapy deck) */
+.sec{background:radial-gradient(circle at 80% 18%,#FFA266 0%,#FF781D 46%,#EF620C 100%);color:#fff}
+.sec .wm{position:absolute;right:-30px;bottom:-110px;font-size:430px;font-weight:700;letter-spacing:-.04em;line-height:1;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.28)}
+.sec .eyeb{position:absolute;left:58px;top:118px;display:flex;align-items:center;gap:12px;font-size:10px;font-weight:700;letter-spacing:.3em}
+.sec .eyeb i{display:block;width:30px;height:2px;background:#fff}
+.sec .ttl{position:absolute;left:55px;top:144px;line-height:1.02}
+.sec .ttl .b{font-weight:700;letter-spacing:-.015em}.sec .ttl .t{font-weight:100;letter-spacing:-.02em}
+.sec .lg{position:absolute;left:58px;bottom:44px;background:#fff;border-radius:12px;padding:10px 16px}
+.sec .lg img{height:26px;display:block}
+.sec .frame{position:absolute;right:58px;top:70px;width:300px;height:400px;border-radius:22px;overflow:hidden;border:6px solid rgba(255,255,255,.9);box-shadow:0 20px 50px rgba(120,40,0,.25)}
+.sec .frame img{width:100%;height:100%;object-fit:cover;display:block}
+.sec .idx{position:absolute;right:58px;top:66px;width:372px;padding:20px 24px;border-radius:18px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35)}
+.sec .idx .k{font-size:9px;font-weight:700;letter-spacing:.26em;opacity:.9;margin-bottom:12px}
+.sec .idx ol{margin:0;padding:0;list-style:none;columns:2;column-gap:20px}
+.sec .idx li{font-size:13.5px;font-weight:600;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.22);break-inside:avoid;display:flex;gap:10px;align-items:baseline}
+.sec .idx li b{font-weight:200;font-size:15px;width:22px}
+.sec .vix{position:absolute;right:58px;top:84px;width:384px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.sec .vix span{height:108px;border-radius:20px;background:rgba(255,255,255,.14);border:1.5px solid rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;letter-spacing:-.02em}
+.sec .vix span:nth-child(5n+1){background:#fff;color:var(--o);border-color:#fff}
+/* Arabic slide header */
+.xh{display:flex;justify-content:space-between;align-items:flex-end;direction:rtl}
+.xh h2{margin:0;font-family:"LS Ar",sans-serif;font-size:32px;font-weight:700;color:var(--p);line-height:1.3}
+.xh .rule{margin:6px 0 0}
+.lbl{font-size:13px}
+/* ---- fit pass 1 ---- */
+.vb{top:22px;bottom:auto}
+.vh{flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px 18px}
+.vh .h1{font-size:28px;white-space:nowrap}
+.fnc .chip{font-size:17px;padding:7px 14px 7px 10px}
+.arc{gap:7px}
+.arc span{font-size:19px;padding:4px 12px;line-height:1.45}
+.arc .sh{font-size:15px !important}
+ul.arl li{padding:4px 18px 4px 0}
+ul.arl li:before{top:16px}
+.dose{padding:10px 20px !important;gap:16px}
+.dose .cn{font-size:23px}
+.dose .dv span{font-size:18px;padding:5px 12px}
+/* investigations as full-width rows */
+.ivr{flex-direction:row !important;align-items:center;gap:24px;padding:16px 24px !important}
+.ivr .ivh{width:180px;flex:none;display:flex;flex-direction:column;gap:4px}
+.ivr .ivh .no{font-size:60px}
+.ivr .ivh h3{font-size:27px}
+.ivr .ivb{flex:1;display:flex;flex-direction:column;gap:10px}
+.iv .ln{font-size:19px}
+.iv .ln .eqv{font-size:16px}
+/* compact big rows */
+.rw2.cp{flex:1;padding:8px 20px;font-size:20px;gap:16px;line-height:1.3}
+.rw2.cp .bdg{width:52px;height:52px}
+/* K2 effects */
+.k2e .mo{font-size:18px;line-height:1.28;padding:8px 12px;gap:12px}
+/* ---- fit pass 2 ---- */
+.bfx .arc{gap:10px}
+.bfx .arc span{font-size:22px;padding:8px 16px}
+.bfx h3{font-size:28px}
+.bfx h3 .bdg{width:60px;height:60px}
+.mnx .mn{flex-direction:row;gap:22px;justify-content:flex-start;padding:18px 24px}
+.mnx .mn .el{width:128px;height:128px;flex:none}
+.mnx .mn .el b{font-size:58px}
+.mnx .mn .nm{font-size:26px}
+/* ---- fill pass (monographs, best foods) ---- */
+.mc{display:flex;flex-direction:column;padding:14px 16px !important;min-height:0}
+.mc .ct{flex:none;margin-bottom:8px}
+.sh2{flex:none;font-size:16px;font-weight:700;color:var(--o);padding:0 2px 7px;text-align:right}
+.sh2.ar{font-family:"LS Ar",sans-serif;direction:rtl}
+.sh2.en{direction:ltr}
+.or .sh2{color:#fff}
+.gf{flex:1;display:grid;direction:rtl;grid-auto-rows:1fr;gap:8px;min-height:0}
+.gf.c1{grid-template-columns:minmax(0,1fr)}
+.gf.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.gf.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.gf.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.gf > span{display:flex;align-items:center;justify-content:center;text-align:center;font-family:"LS Ar",sans-serif;font-size:var(--fs,20px);font-weight:600;color:var(--p);background:#fff;border-radius:12px;padding:4px 10px;line-height:1.3}
+.gf > span.en{font-family:"LS Mont",sans-serif;font-weight:700}
+.card.wh .gf > span{background:var(--os)}
+.card.or .gf > span{background:rgba(255,255,255,.18);color:#fff}
+.gf.ls > span{justify-content:flex-start;text-align:right;padding:4px 14px}
+.gf.ls > span:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--o);margin-left:10px;flex:none}
+.card.or .gf.ls > span:before{background:#fff}
+.gf.c2 > span:last-child:nth-child(odd){grid-column:span 2}
+.gf.c3 > span:last-child:nth-child(3n+1){grid-column:span 3}
+.gf.c3 > span:last-child:nth-child(3n+2){grid-column:span 2}
+.gf.c4 > span:last-child:nth-child(4n+1){grid-column:span 4}
+.gf.c4 > span:last-child:nth-child(4n+2){grid-column:span 3}
+.gf.c4 > span:last-child:nth-child(4n+3){grid-column:span 2}
+.gf > span.w3{grid-column:span 3}
+.gf.c3 > span.w3 ~ span:last-child{grid-column:auto}
+.bf2{min-height:0}
+.bf2 .gf{margin-top:2px}
+.bf2.on .gf > span{background:#fff}
+.nl2.fill{flex:1;grid-auto-rows:1fr}
+.nl2.fill div{font-size:24px;padding:8px 18px}
+.nl2.fill div b{font-size:30px}
+.mc .rw2{flex:1}
+.dose .ct{font-size:10px;letter-spacing:.14em}
+.dose{gap:14px}
+/* Vitamin D dose tiles */
+.dz{position:relative;background:var(--os);border-radius:18px;padding:16px 26px;display:flex;flex-direction:column;justify-content:center;gap:8px;overflow:hidden}
+.dz .sv{font-size:88px;font-weight:100;color:var(--o);line-height:1;letter-spacing:-.03em}
+.dz .sv.nm{font-size:58px;font-weight:200}
+.dz .sv small{font-size:30px;font-weight:300;margin-left:8px}
+.dz .nt{font-family:"LS Ar",sans-serif;direction:rtl;text-align:right;font-size:24px;font-weight:700;color:var(--p);line-height:1.4}
+.dz .bdg{position:absolute;right:22px;top:20px;width:64px;height:64px;background:#fff}
+.dz.on{background:var(--og)}
+.dz.on .sv,.dz.on .nt{color:#fff}
+.dz.on .bdg{background:rgba(255,255,255,.22);color:#fff}
+/* misc fixes */
+.xh .pill{direction:ltr}
+.frm,.frm span{white-space:nowrap}
+.frm .res{font-size:56px}
+.ivr{padding:12px 22px !important}
+.ivr .ivb{gap:8px}
+.iv .ln{padding:10px 16px}
+.tl .bdg{width:58px;height:58px;flex:none}
+.chn .s{font-size:21px}
+.mnx .mn .nm{white-space:nowrap;font-size:24px}
+.arw{font-family:"LS Ar",sans-serif;font-size:26px}
+/* ---- fit pass 3 ---- */
+.gf.c5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.dosev{justify-content:center;gap:10px}
+.dosev .ct{margin:0}
+.dosev .cn{font-size:30px;font-weight:700}
+.dosev .dv{display:flex;flex-direction:column;gap:8px}
+.dosev .dv span{background:rgba(255,255,255,.18);border-radius:10px;padding:8px 12px;font-size:19px;font-weight:600;text-align:center}
+.dosev .dv span.ar{font-family:"LS Ar",sans-serif;direction:rtl}
+.dz{padding:14px 24px}
+.dz .sv{font-size:76px}
+.dz .sv.nm{font-size:54px}
+.dz .nt{font-size:22px}
+.dz.on .nt{font-size:21px}
+.dose .dv{flex-shrink:0;flex-wrap:nowrap}
+.nl2.fill div{font-size:22px;padding:6px 16px}
+.nl2.fill div b{font-size:26px}
+.frm{font-size:32px}
+.frm .res{font-size:64px}
+.fe5 > .ft2{justify-content:center;gap:16px;padding:14px 8px}
+.fe5 > .ft2 .bdg{width:88px;height:88px}
+.fe5 > .ft2 .bdg .ico{width:40px;height:40px}
+/* ---- fit pass 4: label sizes ---- */
+.ct{font-size:13px;letter-spacing:.12em}
+.fnc .k{font-size:13px;letter-spacing:.12em}
+.dose .ct{font-size:13px;letter-spacing:.1em}
+.nl2.big2 div{font-size:22px;padding:14px 18px}
+.nl2.big2 div b{font-size:28px}
+.dose .ct{white-space:normal;max-width:150px;line-height:1.35}
+.nl2.big2 div{padding:10px 18px}
+
+/* ---- fit pass 5 ---- */
+.gf.tight > span{padding:4px 4px}
+.mnx .mn .nm{white-space:normal;font-size:24px;line-height:1.25}
+.mnx .mn .el{width:112px;height:112px}
+.mnx .mn .el b{font-size:52px}
+.frm{font-size:28px;gap:14px}
+.frm .res{font-size:54px}.frm{gap:10px}
+.frm .fr2 span{padding:4px 10px}
+.wl{height:auto;flex:1;max-height:58px;margin:4px 0;border-radius:10px;background:rgba(255,255,255,.13);border-bottom:2px dotted rgba(255,255,255,.95)}
+.tsat h3{font-size:27px}
+.tsat .no{font-size:56px}
+.tsat .ln{font-size:21px;padding:14px 18px}
+.tsat .frm{padding:6px 0}
+
+/* ---- lecture-specific (MNT of Diabetes) ---- */
+.ag.agc{padding:7px 0}
+.ag.agc .no{font-size:26px}
+.ag.agc b{font-size:17px}
+/* Type I vs Type II comparison */
+.cmp2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;flex:1;min-height:0}
+.cmp2 .hd2{display:flex;align-items:center;justify-content:center;gap:12px;border-radius:14px;padding:10px;font-size:26px;font-weight:700;background:var(--os);color:var(--p)}
+.cmp2 .hd2.on{background:var(--og);color:#fff}
+.cmp2 .hd2 .bdg{width:46px;height:46px;background:#fff;flex:none}
+.cmp2 .cl{display:grid;grid-auto-rows:1fr;gap:7px;min-height:0}
+.cmp2 .cl > span{display:flex;align-items:center;justify-content:center;text-align:center;border-radius:11px;padding:4px 12px;font-size:17.5px;font-weight:600;line-height:1.25;background:var(--os);color:var(--p)}
+.cmp2 .cl.on > span{background:var(--og);color:#fff}
+.cmp2 .cl > span.wi{font-weight:400;letter-spacing:.04em}
+/* glycaemic-index cards */
+.gil{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));grid-auto-rows:1fr;gap:9px;flex:1;min-height:0}
+.gil div{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;border-radius:14px;padding:8px 6px;background:var(--os)}
+.gil b{font-size:40px;font-weight:100;line-height:1;letter-spacing:-.03em;color:var(--o)}
+.gil span{font-size:15.5px;font-weight:700;color:var(--p);text-align:center;line-height:1.2}
+.gil .md{background:var(--os2)}
+.gil .hi{background:var(--og)}
+.gil .hi b,.gil .hi span{color:#fff}
+.gkey{display:flex;gap:10px;align-items:center}
+.gkey i{display:flex;align-items:center;gap:8px;font-style:normal;font-size:16px;font-weight:700;color:var(--p);background:var(--os);border-radius:20px;padding:6px 16px}
+.gkey i em{font-style:normal;font-weight:400;color:var(--mut)}
+.gkey i s{text-decoration:none;width:14px;height:14px;border-radius:4px;background:var(--os2);border:1.5px solid var(--oline)}
+.gkey i.m s{background:var(--os2);border-color:var(--o)}
+.gkey i.h{background:var(--og);color:#fff}
+.gkey i.h s{background:#fff;border-color:#fff}
+.gkey i.h em{color:rgba(255,255,255,.85)}
+/* energy rows: label -> value */
+.enr{display:grid;grid-auto-rows:1fr;gap:9px;flex:1;min-height:0}
+.enr > div{display:flex;align-items:center;gap:16px;background:var(--os);border-radius:14px;padding:10px 20px}
+.enr .k{flex:none;width:230px;font-size:19px;font-weight:700;color:var(--p);line-height:1.25}
+.enr .v{flex:1;font-size:21px;font-weight:600;color:var(--tx);line-height:1.3}
+.enr .v b{color:var(--o);font-weight:700}
+.enr > div.on{background:var(--og)}
+.enr > div.on .k,.enr > div.on .v,.enr > div.on .v b{color:#fff}
+/* ranking band */
+.rk{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rk div{border-radius:16px;padding:14px 18px;display:flex;flex-direction:column;gap:2px;background:var(--os)}
+.rk div .t2{font-size:19px;font-weight:700;color:var(--p);letter-spacing:.04em;text-transform:uppercase}
+.rk div .n2{font-size:46px;font-weight:100;line-height:1.05;letter-spacing:-.03em;color:var(--o)}
+.rk div.m{background:var(--os2)}
+.rk div.h{background:var(--og)}
+.rk div.h .t2,.rk div.h .n2{color:#fff}
+/* goal rows */
+.gl{display:grid;grid-auto-rows:1fr;gap:8px;flex:1;min-height:0}
+.gl > div{display:flex;align-items:center;justify-content:space-between;gap:14px;background:#fff;border-radius:12px;padding:8px 18px}
+.gl .k{font-size:19px;font-weight:700;color:var(--p)}
+.gl .v{font-size:23px;font-weight:700;color:var(--o);white-space:nowrap}
+.card.or .gl > div{background:rgba(255,255,255,.18)}
+.card.or .gl .k,.card.or .gl .v{color:#fff}
+/* write-in inline */
+.wix{display:inline-block;min-width:150px;border-bottom:2px dotted var(--oline);height:19px;vertical-align:-3px;margin-left:8px}
+.card.or .wix{border-bottom-color:rgba(255,255,255,.8)}
+/* big percent pill */
+.pcp{display:inline-flex;align-items:baseline;gap:4px;font-size:46px;font-weight:100;letter-spacing:-.03em;color:var(--o);line-height:1}
+.pcp small{font-size:20px;font-weight:600}
+.card.or .pcp,.card.or .pcp small{color:#fff}
+
+/* ---- fit pass 1 ---- */
+.ag.agc{padding:5px 0}
+.ag.agc .no{font-size:24px}
+.ag.agc b{font-size:16.5px}
+.gil b{font-size:36px}
+.gil span{font-size:15px}
+.gkey i{font-size:14px;padding:5px 12px}
+.mg .sv{font-size:54px}
+.m30{font-size:96px}
+.pc{font-size:96px}
+.gil b{font-size:33px}
+.gil div{padding:6px 4px}
+.gil span{font-size:14.5px}
+.mg .sv{font-size:48px}
+.mg .hh b{font-size:21px}
+.mg{padding:12px 18px}
+
+.gil.g7{grid-template-columns:repeat(7,minmax(0,1fr))}
+.gil.g7 b{font-size:42px}
+.gil.g7 span{font-size:15px}
+.gil.g7 div{padding:10px 4px}
+
+.gil.g7 div{padding:6px 4px}
+.gil.g7 b{font-size:38px}
+.gkey i{font-size:13px;padding:4px 10px}
+.gkey{gap:7px}
+
+.gix .rw2{font-size:20.5px;padding:10px 20px}
+.gix .rw2 .bdg{width:58px;height:58px}
+
+/* ---- fit pass 2: LTR lists, nowrap numbers ---- */
+.gf[style*="direction:ltr"] > span{text-align:left}
+.gf.ls[style*="direction:ltr"] > span:before{margin-left:0;margin-right:10px}
+.pcp{white-space:nowrap}
+.mg .sv.nw{white-space:nowrap;font-size:42px}
+.ref{clear:both}
+/* ---- insulin action rows ---- */
+.act{display:flex;align-items:center;gap:20px;border-radius:16px;padding:12px 20px;flex:1;background:var(--os);min-height:0}
+.act.on{background:var(--og);color:#fff}
+.act.wh2{background:#fff;border:1.5px solid var(--line)}
+.act .lb2{flex:none;width:200px;display:flex;flex-direction:column;gap:2px;font-size:20px;font-weight:700;line-height:1.2;color:var(--p)}
+.act.on .lb2{color:#fff}
+.act .lb2 .rm{font-size:13px;font-weight:700;letter-spacing:.18em;color:var(--o)}
+.act.on .lb2 .rm{color:rgba(255,255,255,.9)}
+.act .lb2 small{font-size:14.5px;font-weight:600;opacity:.8}
+.act .it{flex:1;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:9px;align-self:stretch}
+.act .it span{display:flex;align-items:center;justify-content:center;text-align:center;border-radius:12px;padding:8px 12px;font-size:18px;font-weight:600;line-height:1.3;background:#fff;color:var(--p)}
+.act.on .it span{background:rgba(255,255,255,.2);color:#fff}
+.act.wh2 .it span{background:var(--os)}
+.act .arr{color:var(--o)}
+.act.on .arr{color:#fff}
+/* top-align list bullets */
+.gf.ls > span{align-items:flex-start}
+.gf.ls > span:before{margin-top:9px}
+.act .it span{font-size:17px;padding:6px 10px}
+.act .lb2{width:185px;font-size:19px}
+
+.act .it{grid-auto-columns:minmax(0,1fr)}
+
+.act .it.g2{grid-auto-flow:row;grid-template-columns:1fr 1fr;grid-auto-rows:1fr}
+.act .it.g2 > span:first-child{grid-column:span 2}
+
+.act .it.g2{gap:7px}
+.act .it.g2 span{font-size:16.5px;padding:5px 10px;line-height:1.25}
+
+.act .it span{font-size:16px;line-height:1.22}
+.act .it.g2 span{font-size:15.5px;line-height:1.2}
+.act{padding:10px 18px}
+
+/* ---- lecture-specific (Pregnancy Care Nutrition) ---- */
+/* stat tile: label + Thin number */
+.sx{position:relative;background:var(--os);border-radius:18px;padding:14px 22px;display:flex;flex-direction:column;justify-content:center;gap:4px;overflow:hidden;min-height:0}
+.sx .k{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--o)}
+.sx .v{font-size:76px;font-weight:100;line-height:1;letter-spacing:-.03em;color:var(--o);white-space:nowrap}
+.sx .v small{font-size:28px;font-weight:300;margin-left:6px;letter-spacing:0}
+.sx .v .up5{font-family:Arial,sans-serif;font-size:42px;font-weight:400;margin-right:6px;vertical-align:14px}
+.sx b{font-size:20px;color:var(--p);line-height:1.28;font-weight:700}
+.sx .bdg{position:absolute;right:18px;top:16px;width:54px;height:54px;background:#fff}
+.sx.on{background:var(--og)}
+.sx.on .k,.sx.on .v,.sx.on b{color:#fff}
+.sx.on .bdg{background:rgba(255,255,255,.22);color:#fff}
+.sx.wh{background:#fff;border:1.5px solid var(--line)}
+/* rows inside cards */
+.li{display:flex;align-items:center;gap:12px;background:#fff;border-radius:12px;padding:9px 16px;font-size:19px;font-weight:600;color:var(--p);line-height:1.35;min-height:0}
+.li .bdg{width:40px;height:40px;background:var(--os2)}
+.li .arr{color:var(--o)}
+.card.wh .li{background:var(--os)}
+.card.or .li{background:rgba(255,255,255,.18);color:#fff}
+.card.or .li .bdg{background:rgba(255,255,255,.22);color:#fff}
+.card.or .li .arr{color:#fff}
+.li.fx{flex:1}
+.tx2{font-size:20px;line-height:1.45;font-weight:600;color:var(--p)}
+.card.or .tx2{color:#fff}
+.ch3{display:flex;flex-wrap:wrap;gap:8px}
+.ch3 span{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:20px;padding:7px 16px 7px 12px;font-size:18px;font-weight:700;color:var(--p)}
+.ch3 span:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--o);flex:none}
+.card.wh .ch3 span{background:var(--os)}
+.card.or .ch3 span{background:rgba(255,255,255,.2);color:#fff}
+.card.or .ch3 span:before{background:#fff}
+/* numbered heading chip ("05 — Calcium & Vitamin D") */
+.nh{display:flex;align-items:center;gap:14px}
+.nh .nb{font-size:44px;font-weight:100;color:var(--o);line-height:.9;letter-spacing:-.03em}
+/* fork: one step -> several outcomes */
+.frk{display:flex;align-items:center;gap:10px}
+.frk .s{background:var(--og);color:#fff;border-radius:14px;padding:14px 18px;font-size:21px;font-weight:700;line-height:1.25;display:flex;align-items:center;text-align:center;justify-content:center;min-height:84px}
+.frk .s.lt{background:#fff;color:var(--p)}
+.frk .a{flex:none;color:var(--o);display:flex}
+.frk .a svg{width:30px;height:18px}
+.frk .outs{flex:1;display:grid;grid-auto-rows:1fr;gap:8px}
+.frk .outs > span{display:flex;align-items:center;gap:10px;background:#fff;border-radius:12px;padding:8px 16px;font-size:19px;font-weight:700;color:var(--p)}
+.frk .outs > span:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--o);flex:none}
+/* formula / big value tile */
+.fq{font-size:44px;font-weight:200;color:var(--o);letter-spacing:-.02em;line-height:1;white-space:nowrap}
+.fq b{font-weight:700;color:var(--p);font-size:26px;letter-spacing:0}
+/* element tile (P, Mg, Zn ...) on light cards */
+.elx{width:84px;height:84px;border-radius:18px;background:var(--og);color:#fff;display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:600;flex:none;letter-spacing:-.02em}
+.elx.pu{background:var(--p)}
+.elx.wh{background:#fff;color:var(--o)}
+/* complaint table (Arabic) */
+.cpl{display:flex;gap:12px;min-height:0}
+.cpl .lab{width:196px;flex:none;border-radius:16px;background:var(--og);color:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:16px 18px}
+.cpl .lab .bdg{width:52px;height:52px;background:rgba(255,255,255,.22);color:#fff}
+.cpl .lab b{font-size:25px;line-height:1.15}
+.cpl .lab small{font-family:"LS Ar",sans-serif;direction:rtl;text-align:right;font-size:16px;font-weight:600;line-height:1.55}
+.cpl .sol{flex:1;background:var(--os);border-radius:16px;padding:10px;display:grid;gap:8px;min-height:0;grid-auto-rows:minmax(0,1fr)}
+.cpl .sol.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cpl .sol > div{display:flex;align-items:center;gap:12px;background:#fff;border-radius:12px;padding:4px 16px;font-size:19px;font-weight:600;color:var(--p);line-height:1.4;min-height:0}
+.cpl .sol > div.ar{direction:rtl;text-align:right;font-family:"LS Ar",sans-serif;font-size:20px}
+.cpl .sol .en{font-family:"LS Mont",sans-serif;font-weight:600}
+.nn{font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--o);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"LS Mont",sans-serif;font-size:14px;font-weight:700;flex:none}
+.wl2{flex:1;border-bottom:2px dotted var(--o);min-height:24px;align-self:stretch}
+.ar .en,.en{font-family:"LS Mont",sans-serif}
+/* Arabic two-column benefits */
+.bnf{direction:rtl;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;flex:1;min-height:0}
+.bnf .col2{border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;background:var(--os);min-height:0}
+.bnf .col2.on{background:var(--og)}
+.bnf h3{margin:0 0 2px;display:flex;align-items:center;gap:12px;font-family:"LS Ar",sans-serif;font-size:26px;font-weight:700;color:var(--p)}
+.bnf .on h3{color:#fff}
+.bnf h3 .bdg{width:50px;height:50px;background:#fff}
+.bnf .on h3 .bdg{background:rgba(255,255,255,.22);color:#fff}
+.bnf .it2{flex:1;display:flex;align-items:center;gap:10px;background:#fff;border-radius:12px;padding:4px 14px;font-family:"LS Ar",sans-serif;font-size:19px;font-weight:600;color:var(--p);line-height:1.45;min-height:0}
+.bnf .it2:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--o);flex:none}
+.bnf .on .it2{background:rgba(255,255,255,.18);color:#fff}
+.bnf .on .it2:before{background:#fff}
+/* herb cards */
+.hb{direction:rtl;background:var(--os);border-radius:16px;padding:12px 18px;display:flex;align-items:center;gap:16px;min-height:0}
+.hb .hn{flex:none;width:150px;display:flex;flex-direction:column;gap:4px}
+.hb .hn i.nn{margin-bottom:2px}
+.hb .hn b{font-family:"LS Ar",sans-serif;font-size:28px;font-weight:700;color:var(--p);line-height:1.2}
+.hb .hd3{flex:1;font-family:"LS Ar",sans-serif;font-size:20px;font-weight:600;color:var(--tx);line-height:1.6}
+.hb.on{background:var(--og)}
+.hb.on .hn b,.hb.on .hd3{color:#fff}
+.hb.on .nn{background:#fff;color:var(--o)}
+/* small source/credit line */
+.src2{font-size:13px;font-weight:600;color:var(--mut)}
+/* 10-tile grid helper */
+.g5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;flex:1;min-height:0;grid-auto-rows:minmax(0,1fr)}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;flex:1;min-height:0;grid-auto-rows:minmax(0,1fr)}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;flex:1;min-height:0;grid-auto-rows:minmax(0,1fr)}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;flex:1;min-height:0;grid-auto-rows:minmax(0,1fr)}
+/* tile with icon + text (left aligned) */
+.tt{display:flex;align-items:center;gap:14px;background:var(--os);border-radius:16px;padding:10px 16px;font-size:19px;font-weight:600;color:var(--p);line-height:1.32;min-height:0}
+.tt .bdg{width:56px;height:56px;background:#fff;flex:none}
+.tt .no{font-size:26px;font-weight:200;color:var(--o);width:30px;flex:none;line-height:1}
+.tt.on{background:var(--og);color:#fff}
+.tt.on .no{color:#fff}
+.tt.on .bdg{background:rgba(255,255,255,.22);color:#fff}
+.tt.wh{background:#fff;border:1.5px solid var(--line)}
+.tt.wh .bdg{background:var(--os2)}
+.tt.vc{flex-direction:column;justify-content:center;text-align:center;gap:10px}
+.tt.vc .bdg{width:70px;height:70px}
+/* fit pass 1 */
+.ch3.sm span{font-size:16px;padding:6px 13px 6px 10px}
+.outs.nd > span:before{display:none}
+.frk .outs > span{font-size:17px;padding:6px 14px}
+.hb.on .n,.hb.on .fr{color:#fff}
+.hb .hd3{font-size:19px;line-height:1.55}
+.hb{padding:10px 18px}
+.li .bdg{flex:none}
+
+</style>
+</head>
+<body data-title="CNC &nbsp;·&nbsp; Pregnancy Care Nutrition" data-logo="../brand/horizontal.png">
+
+<!-- =================== COVER =================== -->
+<section class="pg nohf cvt">
+  <div class="top"><div class="wm">CNC</div></div>
+  <div class="eyeb" style="top:62px"><i></i>COMPREHENSIVE NUTRITION COURSE</div>
+  <div class="ttl" style="top:86px;line-height:1.04">
+    <div style="font-size:64px"><span class="b">Pregnancy Care</span></div>
+    <div style="font-size:40px;margin-top:6px"><span class="t">Nutrition &amp; Lactation</span></div>
+  </div>
+  <div class="wrule" style="top:232px"></div>
+  <div class="bio" style="top:250px">
+    <span class="lb">PRESENTED BY</span>
+    <b>Dr. Ahmed El-Khateeb</b>
+    <span class="cr">Assistant Professor of Pharmacology · Faculty of Medicine</span>
+    <span class="cr">Consultant of Obesity &amp; Clinical Nutrition</span>
+    <span class="cr">Certified Life Coach</span>
+  </div>
+  <div class="band">
+    <img src="../brand/horizontal.png" alt="Lifestyle Foundation">
+    <div class="sp"><span></span><div><b>Dr. Ahmed El-Khateeb</b><small>Consultant of Obesity &amp; Clinical Nutrition</small></div></div>
+    <div class="crs"><b>CNC</b><small>COMPREHENSIVE NUTRITION COURSE</small></div>
+  </div>
+</section>
+
+<!-- =================== AGENDA =================== -->
+<section class="pg open" data-eb="Agenda" style="--pw:290px">
+  <div class="panel" style="width:290px"><div class="pnl" style="top:150px"><div class="bi"><i data-i="list"></i></div><div class="pnl-t" style="font-size:40px">Agenda</div></div></div>
+  <div class="bd fl col" style="justify-content:center">
+    <div class="ag agc"><span class="no">1</span><span class="bdg sm"><i data-i="pulse"></i></span><b>Physiological Changes in Pregnancy</b><span class="pill" data-toc="Physiological Changes"></span></div>
+    <div class="ag agc"><span class="no">2</span><span class="bdg sm"><i data-i="check"></i></span><b>Preparation of Healthy Pregnancy</b><span class="pill" data-toc="Healthy Pregnancy"></span></div>
+    <div class="ag agc"><span class="no">3</span><span class="bdg sm"><i data-i="apple"></i></span><b>Nutrient Needs During Pregnancy</b><span class="pill" data-toc="Nutrient Needs"></span></div>
+    <div class="ag agc"><span class="no">4</span><span class="bdg sm"><i data-i="walk"></i></span><b>Exercise During Pregnancy</b><span class="pill" data-toc="Exercise"></span></div>
+    <div class="ag agc"><span class="no">5</span><span class="bdg sm"><i data-i="ban"></i></span><b>Practices to Avoid</b><span class="pill" data-toc="Practices to Avoid"></span></div>
+    <div class="ag agc"><span class="no">6</span><span class="bdg sm"><i data-i="alert"></i></span><b>Medical Complications of Pregnancy</b><span class="pill" data-toc="Complications"></span></div>
+    <div class="ag agc"><span class="no">7</span><span class="bdg sm"><i data-i="clip"></i></span><b>Complaints · Non-Drug Solutions</b><span class="pill" data-toc="Non-Drug Solutions"></span></div>
+    <div class="ag agc"><span class="no">8</span><span class="bdg sm"><i data-i="baby"></i></span><b>Lactation</b><span class="pill" data-toc="Lactation"></span></div>
+  </div>
+</section>
+
+<!-- =================== NORMAL CHANGES =================== -->
+<section class="pg" data-eb="Physiological Changes">
+  <div class="bd fl col" style="gap:12px">
+    <div><h2 class="h1">Normal Changes in Maternal Physiology</h2><div class="rule" style="margin-bottom:0"></div></div>
+    <div class="g3" style="flex:none;height:140px">
+      <div class="sx on"><span class="bdg"><i data-i="drop"></i></span><span class="k">Blood volume</span><div class="v" style="font-size:62px"><span class="up5">&#8593;</span>20<small>%</small></div><b>increases</b></div>
+      <div class="sx"><span class="bdg"><i data-i="wave"></i></span><span class="k">Plasma volume</span><div class="v" style="font-size:62px"><span class="up5">&#8593;</span>50<small>%</small></div><b>increases</b></div>
+      <div class="sx"><span class="bdg"><i data-i="hand"></i></span><span class="k">edema · occurs in</span><div class="v" style="font-size:62px">60-75<small>%</small></div><b>of women</b></div>
+    </div>
+    <div class="g" style="grid-template-columns:1.6fr 1fr;gap:12px;flex:1;min-height:0">
+      <div class="card or fl col" style="padding:14px 20px;gap:10px;justify-content:center">
+        <div class="ct" style="margin:0"><i data-i="flask"></i>Hemodilution</div>
+        <div class="tx2" style="font-size:20px">Concentrations of most vitamins and minerals in blood <b>decrease</b></div>
+        <div style="height:1px;background:rgba(255,255,255,.35)"></div>
+        <span style="font-size:17px;font-weight:600">Blood lipid levels : <span class="arr">&#8593;</span> in concentrations of</span>
+        <div class="ch3 sm"><span>cholesterol</span><span>LDL</span><span>Triglycerides</span><span>HDL cholesterol</span></div>
+      </div>
+      <div class="card fl col" style="padding:14px 20px;gap:10px;justify-content:center">
+        <div class="ct" style="margin:0"><i data-i="gauge"></i>Blood glucose levels</div>
+        <div class="tx2" style="font-size:22px">Increased insulin resistance</div>
+        <div class="li" style="font-size:17px"><span class="bdg"><i data-i="up"></i></span><span>( increased plasma levels of glucose and insulin )</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== GIT + KIDNEY =================== -->
+<section class="pg" data-eb="Physiological Changes">
+  <div class="bd fl col" style="gap:12px">
+    <div><h2 class="h1">Gastrointestinal Changes</h2><div class="rule" style="margin-bottom:0"></div></div>
+    <div class="g mid" style="grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;flex:1;min-height:0">
+      <div class="ft2"><span class="bdg"><i data-i="stomach"></i></span>Relaxed GIT muscle tone</div>
+      <div class="ft2"><span class="bdg"><i data-i="clock"></i></span><span><span class="arr">&#8593;</span> gastric and intestinal transit time</span></div>
+      <div class="ft2 on"><span class="bdg"><i data-i="wave"></i></span><span>Nausea (70%)<br>vomiting (40%)</span></div>
+      <div class="ft2"><span class="bdg"><i data-i="flame"></i></span>Heartburn</div>
+      <div class="ft2"><span class="bdg"><i data-i="hourglass"></i></span>Constipation</div>
+    </div>
+    <div class="act" style="flex:none;padding:14px 20px">
+      <div class="lb2"><span class="rm">KIDNEY</span>Kidney Changes</div>
+      <div class="it"><span style="font-size:21px;justify-content:flex-start;gap:12px"><span class="bdg sm" style="background:var(--os2)"><i data-i="kidney"></i></span><b style="font-size:21px;font-weight:600">Increased risk of urinary tract infection</b></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOOD INTAKE / CV / IMMUNE / HORMONES =================== -->
+<section class="pg" data-eb="Physiological Changes">
+  <div class="bd fl col" style="gap:10px">
+    <div class="g" style="grid-template-columns:1fr 1fr;gap:12px;flex:1;min-height:0">
+      <div class="fl col" style="gap:12px;min-height:0">
+        <div class="card fl col" style="flex:1.5;padding:12px 16px;gap:7px;min-height:0">
+          <div class="ct" style="margin:0"><i data-i="fork"></i>Food intake</div>
+          <div class="li fx" style="font-size:16.5px;padding:5px 12px;gap:10px"><span class="bdg"><i data-i="up"></i></span><span>increased appetite and food intake; weight gain</span></div>
+          <div class="li" style="flex:1.4;font-size:16.5px;padding:5px 12px;gap:10px"><span class="bdg"><i data-i="smile"></i></span><span>Taste and odor changes, modification in preference for some foods</span></div>
+          <div class="li fx" style="font-size:16.5px;padding:5px 12px;gap:10px"><span class="bdg"><i data-i="glass"></i></span><span>Increased thirst</span></div>
+        </div>
+        <div class="card fl col" style="flex:1;padding:12px 16px;gap:7px;min-height:0">
+          <div class="ct" style="margin:0"><i data-i="shield"></i>Immune System</div>
+          <div class="li fx" style="font-size:17px;padding:6px 12px;gap:10px"><span class="bdg"><i data-i="down"></i></span><span>Suppressed immunity</span></div>
+          <div class="li fx" style="font-size:17px;padding:6px 12px;gap:10px"><span class="bdg"><i data-i="alert"></i></span><span>Increased risk of urinary and reproductive tract infection</span></div>
+        </div>
+      </div>
+      <div class="fl col" style="gap:12px;min-height:0">
+        <div class="card or fl col" style="flex:1.35;padding:12px 16px;gap:7px;min-height:0">
+          <div class="ct" style="margin:0"><i data-i="heart"></i>&#8203;</div>
+          <div class="li fx" style="font-size:17px;padding:6px 12px;gap:10px"><span class="bdg"><i data-i="pulse"></i></span><span>Increased cardiac output through <span class="arr">&#8593;</span> heart rate and stroke volume (30-50%)</span></div>
+          <div class="li fx" style="font-size:17px;padding:6px 12px;gap:10px"><span class="bdg"><i data-i="gauge"></i></span><span>Decreased blood pressure in the first half of pregnancy (9%), followed by a return to non pregnancy levels in the second half</span></div>
+        </div>
+        <div class="card fl col" style="flex:.95;padding:12px 16px;gap:7px;min-height:0">
+          <div class="ct" style="margin:0"><i data-i="dna"></i>Hormones</div>
+          <div class="li fx" style="font-size:17px;padding:6px 12px;gap:10px"><span class="bdg"><i data-i="baby"></i></span><span>Placental secretion of Large amounts of hormones needed to support physiological changes of pregnancy</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PREPARATION OF HEALTHY PREGNANCY =================== -->
+<section class="pg" data-eb="Healthy Pregnancy">
+  <div class="bd fl col" style="gap:14px">
+    <div><h2 class="h1">Preparation of Healthy Pregnancy</h2><div class="rule" style="margin-bottom:0"></div></div>
+    <div class="g big5" style="grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;flex:1;min-height:0">
+      <div class="ft2 on"><span class="bdg"><i data-i="scale"></i></span>Achieve &amp; maintain healthy BWt</div>
+      <div class="ft2"><span class="bdg"><i data-i="apple"></i></span>Choose balanced Diet</div>
+      <div class="ft2"><span class="bdg"><i data-i="walk"></i></span>be physically Active</div>
+      <div class="ft2"><span class="bdg"><i data-i="cal"></i></span>Regular Health Care Visits</div>
+      <div class="ft2"><span class="bdg"><i data-i="ban"></i></span>Avoid harmful effects</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== UNDER / OVER WEIGHT =================== -->
+<section class="pg" data-eb="Healthy Pregnancy">
+  <div class="bd fl col" style="gap:12px">
+    <div class="card fl col" style="flex:1.25;padding:14px 20px;gap:10px;justify-content:center">
+      <div class="fl ac jb"><h2 class="h1">Under weight</h2><span class="tx2" style="font-size:19px">Advised To gain weight before pregnancy</span></div>
+      <div class="frk" style="flex:1;min-height:0">
+        <div class="s" style="width:170px">Under weight</div>
+        <span class="a"><i data-i="arrow"></i></span>
+        <div class="s lt" style="width:210px">Low birth weight</div>
+        <span class="a"><i data-i="arrow"></i></span>
+        <div class="outs" style="align-self:stretch"><span>Decrease IQ</span><span>Education Problem</span><span>Short Stature</span></div>
+      </div>
+    </div>
+    <div class="card or fl col" style="flex:1;padding:14px 20px;gap:10px;justify-content:center">
+      <h2 class="h1" style="color:#fff">Over weight</h2>
+      <div class="li fx"><span class="bdg"><i data-i="baby"></i></span><span>Infant of Obese female is larger &gt; Normal , may Not receive special medical Care</span></div>
+      <div class="li fx"><span class="bdg"><i data-i="female"></i></span><span>Obese women <span class="arr">&#8594;</span> gestational DM .. HTN - infection</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== NUTRIENT NEEDS + ENERGY =================== -->
+<section class="pg" data-eb="Nutrient Needs">
+  <div class="bd fl col" style="gap:10px">
+    <div><h2 class="h1">Nutrient Needs During Pregnancy</h2><div class="rule" style="margin-bottom:0"></div></div>
+    <div class="card fl col" style="padding:12px 16px;gap:8px">
+      <div class="li"><span class="bdg"><i data-i="baby"></i></span><span>Each organ of fetus needs nutrients most during its own growth period</span></div>
+      <div class="li"><span class="bdg"><i data-i="heart"></i></span><span>Deficiency during one stage may affect heart, during another stage, the developing limbs</span></div>
+    </div>
+    <div class="lbl">Energy</div>
+    <div class="g4" style="flex:1">
+      <div class="sx on" style="padding:12px 16px"><span class="k">Energy</span><b style="font-size:24px">C. weight</b><div class="v" style="font-size:56px">X 25</div></div>
+      <div class="sx" style="padding:12px 16px;justify-content:space-between"><span class="k">First Trimester</span><div class="v" style="font-size:36px;font-weight:200;letter-spacing:-.01em;white-space:normal;line-height:1.05">no change</div></div>
+      <div class="sx" style="padding:12px 16px"><span class="k">Second Trimester</span><div class="v" style="font-size:56px">350</div><b style="font-size:17px">increases kcal/day</b></div>
+      <div class="sx" style="padding:12px 16px"><span class="k">Third Trimester</span><div class="v" style="font-size:56px">450</div><b style="font-size:17px">increases kcal/day</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== MACRONUTRIENTS =================== -->
+<section class="pg open" data-eb="Nutrient Needs" style="--pw:200px">
+  <div class="panel pp" style="width:200px"><img class="pimg" src="img/u-salmon.jpg" style="object-position:40% 50%" alt=""></div>
+  <div class="bd fl col" style="gap:10px">
+    <div><h2 class="h1">Nutrient Needs During Pregnancy</h2><div class="rule" style="margin-bottom:0"></div></div>
+    <div class="g3" style="flex:1">
+      <div class="sx"><span class="k">1 — Protein</span><div class="v" style="font-size:52px">1.2-1.5</div><b>g \ kg</b></div>
+      <div class="sx"><span class="k">2 — Carbohydrate</span><div class="v" style="font-size:52px">45-65<small>%</small></div></div>
+      <div class="sx on"><span class="k">3 — Fat</span><div class="v" style="font-size:52px">25-35<small>%</small></div></div>
+    </div>
+    <div class="card or fl col" style="flex:1.25;padding:12px 18px;gap:7px">
+      <div class="li fx"><span class="bdg"><i data-i="baby"></i></span><span>essential fatty acids is important for Growth of fetus</span></div>
+      <div class="li fx"><span class="bdg"><i data-i="eye"></i></span><span>Best is Omega 3,6 for neurological &amp; eye development</span></div>
+      <div class="li fx"><span class="bdg"><i data-i="fish"></i></span><span>Good Sources : Oily Fish : ( Salmon – Mackerel – Sardines )</span></div>
+    </div>
+    <div class="ref">Protein unit corrected: the handout reads "1.2–1.5 mg \ kg" — protein is given in g / kg.</div>
+  </div>
+</section>
+
+<!-- =================== VITAMINS =================== -->
+<section class="pg open" data-eb="Nutrient Needs" style="--pw:200px">
+  <div class="panel pp" style="width:200px"><img class="pimg" src="img/u-eggs.jpg" style="object-position:50% 50%" alt=""><div class="vb" style="font-size:30px">Vit</div></div>
+  <div class="bd fl col" style="gap:10px">
+    <div class="nh"><span class="nb">04</span><div><h2 class="h1">Vitamins</h2><div class="rule" style="margin:6px 0 0"></div></div></div>
+    <div class="g2" style="flex:1.35">
+      <div class="sx"><span class="bdg"><i data-i="egg"></i></span><span class="k">Vitamin B-12</span><div class="v"><span class="up5">&#8593;</span>10<small>%</small></div><b>needs increase about 10%</b></div>
+      <div class="sx on"><span class="bdg"><i data-i="leaf"></i></span><span class="k">Folate</span><div class="v" style="font-size:54px">400<span class="up5" style="font-size:30px;vertical-align:8px;margin:0 6px">&#8594;</span>600<small style="font-size:24px">µg</small></div><b>DRI increases by half from 400 to 600 micrograms</b></div>
+    </div>
+    <div class="card fl col" style="flex:1;padding:14px 20px;gap:8px;justify-content:center">
+      <div class="ct" style="margin:0"><i data-i="leaf"></i>Folate Requirements in Pregnancy</div>
+      <div class="tx2" style="font-size:22px">Adequate folate is critical <b class="o">before</b> and <b class="o">during the first 4 weeks</b> of pregnancy.</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FOLATE REQUIREMENTS =================== -->
+<section class="pg open" data-eb="Nutrient Needs" style="--pw:200px">
+  <div class="panel pp" style="width:200px"><img class="pimg" src="img/spinach.jpg" style="object-position:50% 50%" alt=""></div>
+  <div class="bd fl col" style="gap:10px">
+    <div><h2 class="h1">Folate Requirements</h2><div class="rule" style="margin-bottom:0"></div></div>
+    <div class="g" style="grid-template-columns:132px 132px 1fr;gap:10px;flex:1.3;min-height:0">
+      <div class="sx" style="padding:10px 14px"><span class="k">unplanned</span><div class="v" style="font-size:52px">50<small style="font-size:22px">%</small></div></div>
+      <div class="sx" style="padding:10px 14px"><span class="k">gestation</span><div class="v" style="font-size:52px">8<small style="font-size:22px">wk</small></div></div>
+      <div class="card or fl col" style="padding:12px 18px;justify-content:center">
+        <div class="tx2" style="font-size:17px;font-weight:500;line-height:1.5">Since 50% of pregnancies are unplanned and most women do not seek prenatal care until 8 weeks gestation, <b style="font-size:19px;font-weight:700">folate supplements prior to conception are critical to prevent NTD.</b></div>
+      </div>
+    </div>
+    <div class="g2" style="flex:.8">
+      <div class="sx on" style="padding:10px 18px;flex-direction:row;align-items:center;justify-content:flex-start;gap:18px"><div class="v" style="font-size:62px">600<small>µg</small></div><b style="color:#fff">DRI · pregnancy</b></div>
+      <div class="sx" style="padding:10px 18px;flex-direction:row;align-items:center;justify-content:flex-start;gap:18px"><div class="v" style="font-size:62px">400<small>µg</small></div><b>for non pregnant woman</b></div>
+    </div>
+    <div class="card fl ac" style="flex:none;padding:12px 18px;gap:12px"><span class="ct" style="margin:0;white-space:nowrap"><i data-i="bean"></i>Good sources</span><div class="ch3"><span>Beans</span><span>peas</span><span>orange juice</span><span>green leafy vegetables</span><span>fortified cereals</span></div></div>
+  </div>
+</section>
+
+<!-- =================== CALCIUM & VIT D =================== -->
+<section class="pg open" data-eb="Nutrient Needs" style="--pw:200px">
+  <div class="panel pp" style="width:200px"><img class="pimg" src="img/u-milk.jpg" style="object-position:30% 50%" alt=""><div class="vb">Ca</div></div>
+  <div class="bd fl col" style="gap:10px">
+    <div class="nh"><span class="nb">05</span><div><h2 class="h1">Calcium &amp; Vitamin D</h2><div class="rule" style="margin:6px 0 0"></div></div></div>
+    <div class="rw2 cp"><span class="bdg"><i data-i="up"></i></span><span>Intestinal absorption of calcium <b class="o">doubles</b> during pregnancy</span></div>
+    <div class="rw2 cp"><span class="bdg"><i data-i="bone"></i></span><span>Mother's bone stores are drawn upon as fetal bones begin to calcify</span></div>
+    <div class="rw2 cp on"><span class="bdg"><i data-i="sun"></i></span><span>Vit D increase Abs of Ca .. its deficiency <span class="arr">&#8594;</span> Rickets , Teeth abn.</span></div>
+    <div class="rw2 cp"><span class="bdg"><i data-i="milk"></i></span><span>Vitamin D Fortified milk is sufficient to support normal Ca Metabolism</span></div>
+  </div>
+</section>
+
+<!-- =================== P, Mg + ZINC =================== -->
+<section class="pg open" data-eb="Nutrient Needs" style="--pw:200px">
+  <div class="panel pp" style="width:200px"><img class="pimg" src="img/u-walnuts.jpg" style="object-position:50% 50%" alt=""><div class="vb">Zn</div></div>
+  <div class="bd fl col" style="gap:10px">
+    <div class="card fl ac" style="flex:1;padding:14px 20px;gap:16px">
+      <span class="nb" style="font-size:44px;font-weight:100;color:var(--o);line-height:1">06</span>
+      <div class="elx">P</div><div class="elx pu">Mg</div>
+      <div class="fl col" style="gap:6px"><b style="font-size:24px;color:var(--p)">Phosphorus &amp; Magnesium</b><span class="tx2">Needed for developing bone</span></div>
+    </div>
+    <div class="card or fl col" style="flex:2;padding:14px 20px;gap:10px">
+      <div class="fl ac" style="gap:14px"><span style="font-size:44px;font-weight:100;line-height:1">07</span><div class="elx wh">Zn</div><b style="font-size:28px">Zinc</b></div>
+      <div class="g" style="grid-template-columns:1.3fr 1fr;gap:10px;flex:1;min-height:0">
+        <div class="fl col" style="gap:8px">
+          <div class="li fx"><span class="bdg"><i data-i="dna"></i></span><span>Required for DNA and RNA synthesis</span></div>
+          <div class="li fx"><span class="bdg"><i data-i="meat"></i></span><span>Sources : meat &amp; nuts</span></div>
+        </div>
+        <div class="fl col" style="justify-content:center;align-items:flex-start;gap:4px;background:rgba(255,255,255,.18);border-radius:14px;padding:10px 18px">
+          <span style="font-size:13px;font-weight:700;letter-spacing:.14em">RDA</span>
+          <span style="font-size:64px;font-weight:200;line-height:1;letter-spacing:-.01em">11<small style="font-size:24px;font-weight:300"> mg / day</small></span>
+          <span style="font-size:15px;font-weight:600">12 mg / day ≤ 18 y</span>
+        </div>
+      </div>
+    </div>
+    <div class="ref">Zinc RDA in pregnancy: 11 mg/day (19–50 y); the handout's 12 mg is the 14–18 y value · NIH ODS / IOM DRI.</div>
+  </div>
+</section>
+
+<!-- =================== FLUIDS =================== -->
+<section class="pg open" data-eb="Nutrient Needs" style="--pw:200px">
+  <div class="panel pp" style="width:200px"><img class="pimg" src="img/u-water.jpg" style="object-position:50% 50%" alt=""></div>
+  <div class="bd fl col" style="gap:12px">
+    <div class="nh"><span class="nb">08</span><div><h2 class="h1">Fluids</h2><div class="rule" style="margin:6px 0 0"></div></div></div>
+    <div class="g" style="grid-template-columns:1fr 1.9fr;gap:12px;flex:1;min-height:0">
+      <div class="sx on"><span class="bdg"><i data-i="glass"></i></span><span class="k">Fluids</span><div class="v">8-10</div><b>Cups \ day</b></div>
+      <div class="card fl col" style="padding:14px 16px;gap:10px;justify-content:center">
+        <div class="ct" style="margin:0"><i data-i="down"></i>If fluid intake &#8595; &#8594;</div>
+        <div class="g2" style="flex:1;gap:8px"><div class="tt wh vc" style="gap:6px"><span class="bdg" style="width:48px;height:48px"><i data-i="drop"></i></span><span>Retention</span></div><div class="tt wh vc" style="gap:6px"><span class="bdg" style="width:48px;height:48px"><i data-i="kidney"></i></span><span>UTI</span></div><div class="tt wh vc" style="gap:6px"><span class="bdg" style="width:48px;height:48px"><i data-i="hourglass"></i></span><span>Constipation</span></div><div class="tt wh vc" style="gap:6px"><span class="bdg" style="width:48px;height:48px"><i data-i="thermo"></i></span><span>Dehydration</span></div></div>
+      </div>
+    </div>
+    <div class="card fl ac" style="flex:none;padding:14px 20px;gap:14px"><span class="ct" style="margin:0"><i data-i="cup"></i>Sources</span><span style="font-size:24px;font-weight:700;color:var(--p)">Water</span><span style="font-size:28px;font-weight:200;color:var(--o)">&gt;</span><span style="font-size:24px;font-weight:700;color:var(--p)">Soups</span><span style="font-size:24px;font-weight:200;color:var(--o)">–</span><span style="font-size:24px;font-weight:700;color:var(--p)">Juice</span></div>
+  </div>
+</section>
+
+<!-- =================== IRON =================== -->
+<section class="pg open" data-eb="Nutrient Needs" style="--pw:200px">
+  <div class="panel pp" style="width:200px"><img class="pimg" src="img/iron.jpg" style="object-position:55% 50%" alt=""><div class="vb">Fe</div></div>
+  <div class="bd fl col" style="gap:10px">
+    <div class="nh"><span class="nb">09</span><div><h2 class="h1">Iron</h2><div class="rule" style="margin:6px 0 0"></div></div></div>
+    <div class="card or fl col" style="padding:12px 18px;gap:8px">
+      <div class="ct" style="margin:0"><i data-i="alert"></i>Deficiency increases risk of</div>
+      <div class="ch3"><span>maternal and infant death</span><span>preterm delivery</span><span>low birth weight babies</span></div>
+    </div>
+    <div class="lbl">Iron Treatment Recommendations · Iron-rich foods</div>
+    <div class="g3" style="flex:1">
+      <div class="tt"><span class="bdg"><i data-i="meat"></i></span><span>Meat, fish, poultry, eggs</span></div>
+      <div class="tt"><span class="bdg"><i data-i="liver"></i></span><span>Organ meats</span></div>
+      <div class="tt"><span class="bdg"><i data-i="bean"></i></span><span>Peas and beans</span></div>
+      <div class="tt"><span class="bdg"><i data-i="berry"></i></span><span>Dried fruit</span></div>
+      <div class="tt"><span class="bdg"><i data-i="grain"></i></span><span>Whole grain and enriched cereal</span></div>
+      <div class="tt on"><span class="bdg"><i data-i="lemon"></i></span><span>Vitamin C <span style="font-family:Arial">&#8593;</span> Abs</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== VITAMIN C + VITAMIN A =================== -->
+<section class="pg open" data-eb="Nutrient Needs" style="--pw:190px">
+  <div class="panel pp" style="width:190px"><img class="pimg" src="img/grapefruit.jpg" style="object-position:50% 50%" alt=""></div>
+  <div class="bd fl col" style="gap:10px">
+    <div class="g2" style="flex:1">
+      <div class="card fl col" style="padding:14px 18px;gap:9px">
+        <div class="fl ac" style="gap:12px"><span style="font-size:36px;font-weight:100;color:var(--o);line-height:1">10</span><div class="elx" style="width:60px;height:60px;font-size:30px;border-radius:14px">C</div><b style="font-size:24px;color:var(--p)">Vitamin C</b></div>
+        <div class="fl ac" style="gap:10px"><span class="lbl">RDA</span><span style="font-size:58px;font-weight:100;color:var(--o);line-height:1;letter-spacing:-.03em">85<small style="font-size:22px;font-weight:300"> mg</small></span><span class="src2">80 mg ≤ 18 y</span></div>
+        <div class="li fx" style="background:#fff"><span class="bdg"><i data-i="down"></i></span><span>If decreased <span class="arr">&#8594;</span> Premature Birth</span></div>
+        <div class="li fx" style="background:#fff"><span class="bdg"><i data-i="lemon"></i></span><span>Source : Citrus Fruit Or Juice</span></div>
+      </div>
+      <div class="card or fl col" style="padding:14px 18px;gap:9px">
+        <div class="fl ac" style="gap:12px"><span style="font-size:36px;font-weight:100;line-height:1">11</span><div class="elx wh" style="width:60px;height:60px;font-size:30px;border-radius:14px">A</div><b style="font-size:24px">Vitamin A</b></div>
+        <div class="fl ac" style="gap:10px"><span class="lbl" style="color:#fff">RDA</span><span style="font-size:58px;font-weight:100;line-height:1;letter-spacing:-.03em">770<small style="font-size:22px;font-weight:300"> µg</small></span><span class="src2" style="color:rgba(255,255,255,.85)">750 µg ≤ 18 y</span></div>
+        <div class="li fx"><span class="bdg"><i data-i="up"></i></span><span>If increased : TERATOGENIC</span></div>
+        <div class="li fx"><span class="bdg"><i data-i="down"></i></span><span>If Decreased : LBW , growth problem , Preterm delivery</span></div>
+      </div>
+    </div>
+    <div class="ref">RDAs in pregnancy (19–50 y), NIH ODS / IOM DRI: Vitamin C 85 mg (handout: 80 mg = 14–18 y); Vitamin A 770 µg RAE (handout: "750 mg" — unit is µg; 750 µg = 14–18 y).</div>
+  </div>
+</section>
+
+<!-- =================== EXERCISE: BENEFITS =================== -->
+<section class="pg open" data-eb="Exercise" style="--pw:210px">
+  <div class="panel pp" style="width:210px"><img class="pimg" src="img/s-walking.jpg" style="object-position:50% 60%" alt=""></div>
+  <div class="bd fl col" style="gap:10px">
+    <div><h2 class="h1">Exercise During Pregnancy</h2><div class="rule" style="margin-bottom:0"></div></div>
+    <div class="lbl">Benefits of exercise during pregnancy</div>
+    <div class="rw2 cp"><span class="bdg"><i data-i="shield"></i></span><span>Helps reduce backaches, constipation, bloating, and swelling</span></div>
+    <div class="rw2 cp on"><span class="bdg"><i data-i="drop"></i></span><span>May help prevent or treat gestational diabetes</span></div>
+    <div class="rw2 cp"><span class="bdg"><i data-i="bolt"></i></span><span>Increases energy, improves mood and sleep</span></div>
+    <div class="rw2 cp"><span class="bdg"><i data-i="dumbbell"></i></span><span>Improves posture, promotes muscle tone, strength, and endurance</span></div>
+  </div>
+</section>
+
+<!-- =================== EXERCISE: ACCEPTABLE vs AVOID =================== -->
+<section class="pg" data-eb="Exercise">
+  <div class="bd fl col" style="gap:12px">
+    <div><h2 class="h1">Exercise During Pregnancy</h2><div class="rule" style="margin-bottom:0"></div></div>
+    <div class="cmp2">
+      <div class="fl col" style="gap:9px;min-height:0">
+        <div class="hd2 on"><span class="bdg"><i data-i="check"></i></span>Acceptable activities</div>
+        <div class="cl on" style="flex:1"><span style="font-size:22px">Walking</span><span style="font-size:22px">dancing</span><span style="font-size:22px">biking</span><span style="font-size:22px">Swimming</span><span style="font-size:22px">Yoga</span></div>
+      </div>
+      <div class="fl col" style="gap:9px;min-height:0">
+        <div class="hd2"><span class="bdg"><i data-i="x"></i></span>Exercises to avoid</div>
+        <div class="cl" style="flex:1"><span style="font-size:22px">Scuba Diving</span><span style="font-size:22px">Trampoline</span><span style="font-size:22px">Contact Sports ( Basketball )</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== EXERCISE: WARNING SIGNS =================== -->
+<section class="pg" data-eb="Exercise">
+  <div class="bd fl col" style="gap:12px">
+    <div class="fl ac jb"><div><h2 class="h1">Warning Signs to Stop Exercise</h2><div class="rule" style="margin-bottom:0"></div></div><span class="pill" style="font-size:12px">STOP</span></div>
+    <div class="g cmp" style="grid-template-columns:repeat(5,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);gap:10px;flex:1;min-height:0">
+      <div class="ft2 on"><span class="bdg"><i data-i="drop"></i></span>Vaginal bleeding</div>
+      <div class="ft2"><span class="bdg"><i data-i="wave"></i></span>uterine contractions</div>
+      <div class="ft2"><span class="bdg"><i data-i="baby"></i></span>decreased fetal movement</div>
+      <div class="ft2"><span class="bdg"><i data-i="drop"></i></span>fluid leaking from the vagina</div>
+      <div class="ft2"><span class="bdg"><i data-i="cycle"></i></span>Dizziness or feeling faint</div>
+      <div class="ft2"><span class="bdg"><i data-i="lungs"></i></span>shortness of breath</div>
+      <div class="ft2"><span class="bdg"><i data-i="heart"></i></span>Chest pain</div>
+      <div class="ft2"><span class="bdg"><i data-i="brain"></i></span>headache</div>
+      <div class="ft2"><span class="bdg"><i data-i="dumbbell"></i></span>muscle weakness</div>
+      <div class="ft2"><span class="bdg"><i data-i="alert"></i></span>calf pain</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== PRACTICES TO AVOID =================== -->
+<section class="pg open" data-eb="Practices to Avoid" style="--pw:190px">
+  <div class="panel pp" style="width:190px"><img class="pimg" src="img/u-cigarette.jpg" style="object-position:50% 50%" alt=""></div>
+  <div class="bd fl col" style="gap:10px">
+    <div><h2 class="h1">Practices to Avoid</h2><div class="rule" style="margin-bottom:0"></div></div>
+    <div class="g" style="grid-template-columns:1.1fr 1fr;gap:10px;flex:1;min-height:0">
+      <div class="card or fl col" style="padding:12px 16px;gap:8px">
+        <div class="fl ac" style="gap:10px"><span style="font-size:32px;font-weight:100;line-height:1">02</span><b style="font-size:22px">Cigarette smoking</b></div>
+        <div class="li fx"><span class="bdg"><i data-i="smoke"></i></span><span>Restricts blood supply to growing fetus</span></div>
+        <div class="li fx"><span class="bdg"><i data-i="up"></i></span><span>Increases iron needs</span></div>
+        <div class="fl col" style="gap:6px;background:rgba(255,255,255,.18);border-radius:12px;padding:8px 12px">
+          <span style="font-size:17px;font-weight:700">Decreases availability of :</span>
+          <div class="gf c2" style="direction:ltr;--fs:17px;grid-auto-rows:auto;gap:6px"><span class="en" style="background:#fff;color:var(--p)">Vitamin B-12</span><span class="en" style="background:#fff;color:var(--p)">Vitamin C</span><span class="en" style="background:#fff;color:var(--p)">Folate</span><span class="en" style="background:#fff;color:var(--p)">Zinc</span></div>
+        </div>
+      </div>
+      <div class="fl col" style="gap:10px;min-height:0">
+        <div class="tt" style="flex:1"><span class="no">01</span><span class="bdg"><i data-i="scale"></i></span><span>Do not try to diet during pregnancy</span></div>
+        <div class="card fl col" style="flex:1.7;padding:10px 16px;gap:6px;justify-content:center">
+          <div class="fl ac" style="gap:10px"><span style="font-size:26px;font-weight:200;color:var(--o);line-height:1">03</span><span class="bdg sm" style="background:#fff"><i data-i="cup"></i></span><b style="font-size:20px;color:var(--p)">Caffeine</b></div>
+          <div class="li" style="font-size:17px;padding:7px 12px"><span>Crosses placenta &amp; May retard fetal growth</span></div>
+          <div class="li" style="font-size:17px;padding:7px 12px"><span>Heavy consumption may increase risk of spontaneous abortion</span></div>
+        </div>
+        <div class="tt" style="flex:1"><span class="no">04</span><span class="bdg"><i data-i="pill"></i></span><span style="flex:none">Drugs :</span><span class="wl2"></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== GESTATIONAL DIABETES =================== -->
+<section class="pg open" data-eb="Complications" style="--pw:190px">
+  <div class="panel pp" style="width:190px"><img class="pimg" src="img/s-kit.jpg" style="object-position:50% 50%" alt=""></div>
+  <div class="bd fl col" style="gap:10px">
+    <div class="lbl">Medical complications and other problems of pregnancy</div>
+    <div class="nh"><span class="nb">1</span><div><h2 class="h1">Gestational Diabetes</h2><div class="rule" style="margin:6px 0 0"></div></div></div>
+    <div class="card or" style="padding:12px 18px"><div class="tx2" style="font-size:20px">= appearance of abnormal glucose tolerance during pregnancy with subsequent return to normal postpartum</div></div>
+    <div class="lbl">Risk factors</div>
+    <div class="g2" style="gap:9px">
+      <div class="tt"><span class="no">1</span><span class="bdg" style="width:46px;height:46px"><i data-i="cal"></i></span><span>Age 30 or older</span></div>
+      <div class="tt"><span class="no">2</span><span class="bdg" style="width:46px;height:46px"><i data-i="scale"></i></span><span>Obesity</span></div>
+      <div class="tt"><span class="no">3</span><span class="bdg" style="width:46px;height:46px"><i data-i="clip"></i></span><span>Complications in previous pregnancies</span></div>
+      <div class="tt"><span class="no">4</span><span class="bdg" style="width:46px;height:46px"><i data-i="users"></i></span><span>Family history of diabetes</span></div>
+    </div>
+    <div class="act" style="flex:none;padding:10px 18px"><div class="it"><span style="font-size:18px;gap:10px"><span class="bdg sm" style="background:var(--os2)"><i data-i="alert"></i></span><span>&amp; Without proper management, can lead to infant sickness and death</span></span></div></div>
+  </div>
+</section>
+
+<!-- =================== GDM — MNT =================== -->
+<section class="pg open" data-eb="Complications" style="--pw:190px">
+  <div class="panel pp" style="width:190px"><img class="pimg" src="img/veg-bowl.jpg" style="object-position:50% 50%" alt=""></div>
+  <div class="bd fl col" style="gap:12px">
+    <div class="nh"><span class="nb">1</span><div><div class="lbl" style="margin-bottom:2px">Gestational Diabetes</div><h2 class="h1">Medical Nutrition Therapy</h2><div class="rule" style="margin:6px 0 0"></div></div></div>
+    <div class="g mid" style="grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);gap:12px;flex:1;min-height:0">
+      <div class="ft2" style="flex-direction:row;justify-content:flex-start;text-align:left;gap:16px;padding:12px 18px"><span class="bdg" style="width:76px;height:76px"><i data-i="grain"></i></span><span><b class="o">Select</b> foods rich in <b>complex carbohydrates</b></span></div>
+      <div class="ft2" style="flex-direction:row;justify-content:flex-start;text-align:left;gap:16px;padding:12px 18px"><span class="bdg" style="width:76px;height:76px"><i data-i="sweet"></i></span><span><b class="o">Limit</b> intakes of concentrated <b>sweets</b></span></div>
+      <div class="ft2" style="flex-direction:row;justify-content:flex-start;text-align:left;gap:16px;padding:12px 18px"><span class="bdg" style="width:76px;height:76px"><i data-i="egg"></i></span><span>Provide for <b>optimal protein</b> intake</span></div>
+      <div class="ft2 on" style="flex-direction:row;justify-content:flex-start;text-align:left;gap:16px;padding:12px 18px"><span class="bdg" style="width:76px;height:76px"><i data-i="clock"></i></span><span>Three meals daily + snacks</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== OXIDATIVE STRESS =================== -->
+<section class="pg" data-eb="Complications">
+  <div class="bd fl col" style="gap:12px">
+    <div class="nh"><span class="nb">2</span><div><h2 class="h1">Oxidative Stress and Endothelial Dysfunction</h2><div class="rule" style="margin:6px 0 0"></div></div></div>
+    <div class="card fl col" style="flex:1;padding:14px 18px;gap:10px;justify-content:center;min-height:0">
+      <div class="frk">
+        <div class="s" style="width:136px;font-size:19px;min-height:100px">Oxidative stress</div>
+        <span class="a"><i data-i="arrow"></i></span>
+        <div class="s lt" style="width:150px;font-size:19px;min-height:100px">damages the endothelium</div>
+        <span class="a"><i data-i="arrow"></i></span>
+        <div class="s" style="width:146px;font-size:19px;min-height:100px">Endothelial dysfunction</div>
+        <span class="a"><i data-i="arrow"></i></span>
+        <div class="outs nd"><span><span><span class="arr">&#8595;</span> blood flow</span></span><span><span><span class="arr">&#8593;</span> tendency for blood to clot</span></span><span><span>increases plaque formation</span></span></div>
+      </div>
+      <div class="frk" style="justify-content:flex-end"><span class="a"><i data-i="arrow"></i></span><div class="s" style="flex:none;padding:10px 26px;font-size:20px;min-height:0">hypertensive disorders of pregnancy</div></div>
+    </div>
+    <div class="card or fl ac" style="flex:none;padding:12px 22px;gap:16px"><span class="bdg" style="width:46px;height:46px"><i data-i="shield"></i></span><span style="font-size:14px;font-weight:700;letter-spacing:.14em">TREATMENT</span><span style="font-size:23px;font-weight:700">supply of antioxidants.</span></div>
+  </div>
+</section>
+
+<!-- =================== PRE-ECLAMPSIA =================== -->
+<section class="pg" data-eb="Complications">
+  <div class="bd fl col" style="gap:12px">
+    <div class="nh"><span class="nb">3</span><div><h2 class="h1">Pre-eclampsia</h2><div class="rule" style="margin:6px 0 0"></div></div></div>
+    <div class="tx2" style="font-size:22px">a condition characterized by</div>
+    <div class="g xl" style="grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;flex:1;min-height:0">
+      <div class="ft2 on"><span class="bdg"><i data-i="gauge"></i></span>High blood pressure</div>
+      <div class="ft2"><span class="bdg"><i data-i="drop"></i></span>Generalized fluid retention</div>
+      <div class="ft2"><span class="bdg"><i data-i="flask"></i></span>Protein in the urine</div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== NAUSEA OF MORNING SICKNESS =================== -->
+<section class="pg" data-eb="Complications">
+  <div class="bd fl col" style="gap:10px">
+    <div class="fl ac jb" style="gap:20px"><div class="nh"><span class="nb">4</span><div><h2 class="h1">Nausea of Morning Sickness</h2><div class="rule" style="margin:6px 0 0"></div></div></div><div class="fl col" style="align-items:flex-end;gap:4px"><span class="tx2" style="font-size:15px;max-width:400px;text-align:right">Arises from normal hormonal changes taking place early in pregnancy</span><span class="lbl">Helpful strategies</span></div></div>
+    <div class="g2" style="gap:8px;grid-template-rows:repeat(4,minmax(0,1fr))">
+      <div class="tt" style="font-size:17.5px;padding:6px 14px"><span class="bdg" style="width:46px;height:46px"><i data-i="bed"></i></span><span>On waking, <b>arise slowly</b></span></div>
+      <div class="tt" style="font-size:17.5px;padding:6px 14px"><span class="bdg" style="width:46px;height:46px"><i data-i="bread"></i></span><span><b>Eat dry toast</b> or crackers</span></div>
+      <div class="tt" style="font-size:17.5px;padding:6px 14px"><span class="bdg" style="width:46px;height:46px"><i data-i="clock"></i></span><span>Eat <b>small frequent</b> meals</span></div>
+      <div class="tt" style="font-size:17.5px;padding:6px 14px"><span class="bdg" style="width:46px;height:46px"><i data-i="ban"></i></span><span>If some food odors are offensive, avoid those foods</span></div>
+      <div class="tt" style="font-size:17.5px;padding:6px 14px"><span class="bdg" style="width:46px;height:46px"><i data-i="cup"></i></span><span>When nauseated, drink no citrus juice, milk, coffee or tea</span></div>
+      <div class="tt on" style="font-size:17.5px;padding:6px 14px"><span class="bdg" style="width:46px;height:46px"><i data-i="pill"></i></span><span>Vitamin B6 (pyridoxine) supplements</span></div>
+      <div class="tt" style="font-size:17.5px;padding:6px 14px"><span class="bdg" style="width:46px;height:46px"><i data-i="herb"></i></span><span>Ginger in doses of 1 gram a day for 4 days decreases nausea and vomiting</span></div>
+      <div class="tt" style="font-size:17.5px;padding:6px 14px"><span class="bdg" style="width:46px;height:46px"><i data-i="pill"></i></span><span>Multivitamin supplements taken prior to and early in pregnancy decreased N &amp; V</span></div>
+    </div>
+    <div class="ref">Ginger dose: the handout reads "in doses of gram a day" — the number was missing; 1 g/day for 4 days (Vutyavanich et al., Obstet Gynecol 2001).</div>
+  </div>
+</section>
+
+<!-- =================== CONSTIPATION =================== -->
+<section class="pg open" data-eb="Complications" style="--pw:200px">
+  <div class="panel pp" style="width:200px"><img class="pimg" src="img/bran.jpg" style="object-position:50% 50%" alt=""></div>
+  <div class="bd fl col" style="gap:10px">
+    <div><h2 class="h1">Constipation</h2><div class="rule" style="margin-bottom:0"></div></div>
+    <div class="card or fl ac" style="padding:14px 20px;gap:14px"><span class="bdg"><i data-i="dna"></i></span><span class="tx2" style="font-size:21px">Results from Hormones of pregnancy alter muscle tone</span></div>
+    <div class="lbl">Treatment</div>
+    <div class="rw2 cp"><span class="bdg"><i data-i="grain"></i></span><span>foods high in fiber<small>( raw fruits and vegetables, whole-grain cereals )</small></span></div>
+    <div class="rw2 cp"><span class="bdg"><i data-i="walk"></i></span><span>Exercise daily</span></div>
+    <div class="rw2 cp"><span class="bdg"><i data-i="glass"></i></span><span>Drink ( at least 8 glasses a day ), including fruit juices</span></div>
+  </div>
+</section>
+
+<!-- =================== HEARTBURN =================== -->
+<section class="pg open" data-eb="Complications" style="--pw:190px">
+  <div class="panel pp" style="width:190px"><img class="pimg" src="img/u-fries.jpg" style="object-position:55% 50%" alt=""></div>
+  <div class="bd fl col" style="gap:10px">
+    <div><h2 class="h1">Heartburn</h2><div class="rule" style="margin-bottom:0"></div></div>
+    <div class="g2" style="flex:none;grid-auto-rows:auto">
+      <div class="card fl ac" style="padding:12px 16px;gap:12px"><span class="bdg" style="background:#fff"><i data-i="flame"></i></span><span class="tx2" style="font-size:17px">Is a burning sensation in the lower esophagus, near the heart</span></div>
+      <div class="card or fl ac" style="padding:12px 16px;gap:12px"><span class="bdg"><i data-i="baby"></i></span><span class="tx2" style="font-size:17px">Growing infant may put pressure on the woman's stomach, causing acid to back up</span></div>
+    </div>
+    <div class="lbl">Treatment</div>
+    <div class="g2" style="gap:8px;grid-template-rows:repeat(3,minmax(0,1fr))">
+      <div class="tt" style="font-size:18px;padding:6px 14px"><span class="bdg" style="width:46px;height:46px"><i data-i="clock"></i></span><span>Eat <b>small frequent</b> meals</span></div>
+      <div class="tt" style="font-size:18px;padding:6px 14px"><span class="bdg" style="width:46px;height:46px"><i data-i="glass"></i></span><span>Drink <b>liquids</b> between meals</span></div>
+      <div class="tt on" style="font-size:18px;padding:6px 14px"><span class="bdg" style="width:46px;height:46px"><i data-i="ban"></i></span><span>Avoid <b>spicy</b> or greasy foods</span></div>
+      <div class="tt" style="font-size:18px;padding:6px 14px"><span class="bdg" style="width:46px;height:46px"><i data-i="user"></i></span><span>Sit up while eating</span></div>
+      <div class="tt" style="font-size:18px;padding:6px 14px"><span class="bdg" style="width:46px;height:46px"><i data-i="bed"></i></span><span>Wait an hour after eating before lying down</span></div>
+      <div class="tt" style="font-size:18px;padding:6px 14px"><span class="bdg" style="width:46px;height:46px"><i data-i="walk"></i></span><span>Wait two hours after eating before exercise</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== AR TABLE 1: PICA + NAUSEA/VOMITING =================== -->
+<section class="pg" data-eb="Non-Drug Solutions">
+  <div class="bd fl col" style="gap:10px">
+    <div class="xh"><div><h2>حلول غير دوائية</h2><div class="rule"></div></div><span class="pill" style="font-size:12px">COMPLAINT</span></div>
+    <div class="cpl" style="flex:.42">
+      <div class="lab" style="flex-direction:row;align-items:center;justify-content:flex-start"><span class="bdg"><i data-i="question"></i></span><b>Pica</b></div>
+      <div class="sol"><div><span class="wl2"></span></div></div>
+    </div>
+    <div class="cpl" style="flex:2">
+      <div class="lab"><span class="bdg"><i data-i="wave"></i></span><b>Nausea<br>Vomiting</b></div>
+      <div class="sol c2">
+        <div class="ar"><i class="nn">1</i><span>أول ما تصحى تاكل ف السرير .. بعدها تفطر بربع ساعة</span></div>
+        <div class="ar"><i class="nn">2</i><span>وجبات خفيفة كل ساعتين</span></div>
+        <div class="ar"><i class="nn">3</i><span class="en" dir="ltr">&#8593; CHO , &#8595;&#8595; fat</span></div>
+        <div class="ar"><i class="nn">4</i><span><span class="en">Avoid smelling of food</span> يعني متطبخش &#9786;</span></div>
+        <div class="ar"><i class="nn">5</i><span class="q">تشرب [1/2] ساعة قبل &amp; [1/2] ساعة بعد الوجبة</span></div>
+        <div class="ar"><i class="nn">6</i><span class="en" dir="ltr">Avoid <b class="o">C</b>offee &amp; give <b class="o">C</b>old Fluid</span></div>
+        <div class="ar"><i class="nn">7</i><span>ادي علاج للـ <span class="en">nausea</span><br><bdi class="en" style="font-weight:700;color:var(--o);white-space:nowrap;font-size:18px">Vitamin B6 25 mg 3 / day</bdi></span></div>
+        <div class="ar"><i class="nn">8</i><span>وممكن تاخد جنزبيل <span class="en">Ginger</span> على طرف الملعقة</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== AR TABLE 2: HYPEREMESIS + CONSTIPATION =================== -->
+<section class="pg" data-eb="Non-Drug Solutions">
+  <div class="bd fl col" style="gap:10px">
+    <div class="xh"><div><h2>حلول غير دوائية</h2><div class="rule"></div></div><span class="pill" style="font-size:12px">COMPLAINT</span></div>
+    <div class="cpl" style="flex:1">
+      <div class="lab" style="width:236px;background:var(--og)"><div class="fl ac" style="gap:10px"><span class="bdg"><i data-i="syringe"></i></span><b style="font-size:22px">Hyperemesis</b></div><small>في 3 حالات :<br>&#9679; فقدت 5 % وزن<br>&#9679; حصل جفاف<br>&#9679; نقص في الـ <span class="en">K+</span></small></div>
+      <div class="sol c2">
+        <div><i class="nn">1</i><span>Parenteral Vitamins ( Low in Iron )</span></div>
+        <div><i class="nn">2</i><span>If multi vitamins <span class="arr">&#8594;</span> Nausea : Use FA alone</span></div>
+        <div><i class="nn">3</i><span>IV Fluids</span></div>
+        <div><i class="nn">4</i><span>Saline + KCl + Thiamine</span></div>
+      </div>
+    </div>
+    <div class="cpl" style="flex:1.15">
+      <div class="lab" style="width:236px"><span class="bdg"><i data-i="hourglass"></i></span><b>Constipation</b></div>
+      <div class="sol c2">
+        <div style="grid-column:span 2"><i class="nn">1</i><span>Fiber rich Food ( Whole Grain - Vegetables - fruits - legumes )</span></div>
+        <div><i class="nn">2</i><span>6-8 Cups / day</span></div>
+        <div><i class="nn">3</i><span>glass of Cold water in Early Morning</span></div>
+        <div><i class="nn">4</i><span>Eat Dry fruit</span></div>
+        <div><i class="nn">5</i><span>Exercise : Walking</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== AR TABLE 3: HEARTBURN + FLATULENCE + LACTOSE =================== -->
+<section class="pg" data-eb="Non-Drug Solutions">
+  <div class="bd fl col" style="gap:10px">
+    <div class="xh"><div><h2>حلول غير دوائية</h2><div class="rule"></div></div><span class="pill" style="font-size:12px">COMPLAINT</span></div>
+    <div class="cpl" style="flex:2">
+      <div class="lab" style="width:236px"><span class="bdg"><i data-i="flame"></i></span><b>Heart burn</b></div>
+      <div class="sol">
+        <div><i class="nn">1</i><span>Small , low fat meal &amp; snacks</span></div>
+        <div class="ar"><i class="nn">2</i><span>تجنب الأكل الحراق – المقليات – الحمضيات</span></div>
+        <div class="ar"><i class="nn">3</i><span>ممنوع المشروبات الغازية</span></div>
+        <div><i class="nn">4</i><span>avoid antacid ? as it bind to iron</span></div>
+        <div><i class="nn">5</i><span>Wear loose Clothes</span></div>
+      </div>
+    </div>
+    <div class="cpl" style="flex:.8">
+      <div class="lab" style="width:236px;flex-direction:row;align-items:center;justify-content:flex-start;gap:12px"><span class="bdg"><i data-i="wind"></i></span><b>Flatulence</b></div>
+      <div class="sol"><div><span>Avoid Cabbage – Garlic – Onion – legumes</span></div></div>
+    </div>
+    <div class="cpl" style="flex:.8">
+      <div class="lab" style="width:236px;flex-direction:row;align-items:center;justify-content:flex-start;gap:12px"><span class="bdg"><i data-i="milk"></i></span><b style="font-size:21px">Lactose Intolerance</b></div>
+      <div class="sol"><div class="ar"><span><span class="en">Lactose free product</span> – أرز بلبن – بشاميل – كيك – جبنة</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== AR TABLE 4: ANAEMIA =================== -->
+<section class="pg open" data-eb="Non-Drug Solutions" style="--pw:200px">
+  <div class="panel pp" style="width:200px"><img class="pimg" src="img/iron.jpg" style="object-position:40% 50%" alt=""><div class="vb">Fe</div></div>
+  <div class="bd fl col" style="gap:10px">
+    <div class="xh"><div><h2>حلول غير دوائية</h2><div class="rule"></div></div><span class="pill" style="font-size:12px">COMPLAINT · ANAEMIA</span></div>
+    <div class="card fl col" style="flex:1;padding:14px 18px;gap:10px;justify-content:center">
+      <div class="fl ac ar" style="gap:12px;font-size:22px;font-weight:700;color:var(--p)"><span class="bdg" style="background:#fff;flex:none"><i data-i="alert"></i></span><span style="flex:none">لو ظهرت أعراض نقص الحديد</span><span class="wl2" style="min-height:30px"></span></div>
+      <div class="fl ac ar" style="gap:12px"><span style="font-size:22px;font-weight:700;color:var(--p);flex:none">نزود</span><div class="gf c4" style="--fs:21px;flex:1;grid-auto-rows:54px"><span>لحمة</span><span>بيض</span><span>خضراوات داكنة</span><span>بقوليات</span></div></div>
+    </div>
+    <div class="card or fl ac" style="flex:1;padding:14px 22px;gap:22px">
+      <div class="fl col" style="gap:2px"><span style="font-size:13px;font-weight:700;letter-spacing:.14em">RDA OF IRON IN PREGNANCY</span><span style="font-size:96px;font-weight:100;line-height:1;letter-spacing:-.03em">27<small style="font-size:30px;font-weight:300"> mg</small></span></div>
+      <div class="fl col" style="margin-left:auto;text-align:right"><span style="font-size:40px;font-weight:200">( 3 mg Abs )</span></div>
+    </div>
+    <div class="ref">Iron RDA in pregnancy is 27 mg/day (IOM DRI 2001, NIH ODS); the handout's 30 mg is the older 1989 RDA.</div>
+  </div>
+</section>
+
+<!-- =================== LACTATION: ENERGY =================== -->
+<section class="pg open" data-eb="Lactation" style="--pw:200px">
+  <div class="panel pp" style="width:200px"><img class="pimg" src="img/dairy.jpg" style="object-position:30% 70%" alt=""></div>
+  <div class="bd fl col" style="gap:10px">
+    <div><h2 class="h1">Lactation</h2><div class="rule" style="margin-bottom:0"></div></div>
+    <div class="card or fl ac" style="padding:12px 20px;gap:14px"><span class="bdg"><i data-i="apple"></i></span><span class="tx2" style="font-size:21px">Continue to eat nutrient food , Not restricting weight gain</span></div>
+    <div class="g2" style="flex:1">
+      <div class="sx"><span class="k">Milk production needs</span><div class="v" style="font-size:60px">700-800</div><b>cal \ day</b></div>
+      <div class="sx"><span class="k">producing milk costs women</span><div class="v" style="font-size:60px">500<small>Cal \ Day</small></div><b style="font-size:17px">above her regular needs during 1st 6th month</b></div>
+    </div>
+    <div class="card wh fl ac" style="flex:none;padding:12px 20px;gap:14px;border:2px solid var(--oline);justify-content:space-between;white-space:nowrap">
+      <span style="font-size:19px;font-weight:700;color:var(--p)">1<sup>st</sup> 6 month</span><span style="font-size:42px;font-weight:200;color:var(--o);line-height:1">+ 450 <small style="font-size:18px;font-weight:600">Cal</small></span>
+      <span style="font-size:26px;font-weight:200;color:var(--o)">&amp;</span>
+      <span style="font-size:19px;font-weight:700;color:var(--p)">2<sup>nd</sup> 6 month</span><span style="font-size:42px;font-weight:200;color:var(--o);line-height:1">+ 300 <small style="font-size:18px;font-weight:600">cal</small></span>
+    </div>
+  </div>
+</section>
+
+<!-- =================== LACTATION: REQUIREMENTS =================== -->
+<section class="pg open" data-eb="Lactation" style="--pw:200px">
+  <div class="panel pp" style="width:200px"><img class="pimg" src="img/u-salmon.jpg" style="object-position:60% 50%" alt=""></div>
+  <div class="bd fl col" style="gap:10px">
+    <div><h2 class="h1">Lactation · Requirement</h2><div class="rule" style="margin-bottom:0"></div></div>
+    <div class="g3" style="flex:1.1">
+      <div class="sx"><span class="k">protein</span><div class="v" style="font-size:56px">1.5</div><b>at least – g \ kg</b></div>
+      <div class="sx"><span class="k">carbohydrate</span><div class="v" style="font-size:52px">45-65<small>%</small></div></div>
+      <div class="sx on"><span class="k">Omega 3 FA</span><b style="font-size:22px;margin-top:6px">in fish or supplement</b></div>
+    </div>
+    <div class="card fl ac" style="flex:1;padding:12px 20px;gap:18px">
+      <div class="fl col" style="flex:none"><span class="lbl">fluids</span><span style="font-size:64px;font-weight:100;color:var(--o);line-height:1;letter-spacing:-.03em">14<small style="font-size:22px;font-weight:300"> cup \ day</small></span></div>
+      <div class="fl col" style="gap:8px;flex:1"><div class="ch3"><span>water</span><span>milk</span><span>juice</span></div><span class="tx2" style="font-size:18px">to protect against dehydration</span></div>
+    </div>
+    <div class="card or fl ac" style="flex:none;padding:12px 20px;gap:14px"><span style="font-size:14px;font-weight:700;letter-spacing:.14em">NB</span><span class="tx2" style="font-size:21px">Onion &amp; garlic <span class="arr">&#8594;</span> alter flavour of breast milk</span></div>
+  </div>
+</section>
+
+<!-- =================== LACTATION: WEIGHT LOSS =================== -->
+<section class="pg" data-eb="Lactation">
+  <div class="bd fl col" style="gap:9px">
+    <div><h2 class="h1">Lactation · Weight Loss</h2><div class="rule" style="margin-bottom:0"></div></div>
+    <div class="rw2 cp on"><span class="bdg"><i data-i="milk"></i></span><span>Neither <b>QUALITY</b> nor <b>QUANTITY</b> of breast milk is adversely affected by <b>MODERATE</b> weight loss &amp; infant grows normally .</span></div>
+    <div class="g" style="grid-template-columns:1fr 1fr;gap:9px;flex:2;min-height:0">
+      <div class="rw2 cp"><span class="bdg"><i data-i="scale"></i></span><span><b class="o">500 gm</b> weight loss \ week is safe and won't reduce milk out put</span></div>
+      <div class="rw2 cp"><span class="bdg"><i data-i="walk"></i></span><span>physical activity is best way to reduce weight .</span></div>
+    </div>
+    <div class="rw2 cp"><span class="bdg"><i data-i="down"></i></span><span>Nutritional deprivation only decrease Quantity not quality of milk</span></div>
+    <div class="rw2 cp" style="background:#fff;border:1.5px solid var(--line)"><span class="bdg" style="background:var(--os2)"><i data-i="bone"></i></span><span>Ex : Ca , dietary calcium has no effect on ca Concentration of breast milk.</span></div>
+  </div>
+</section>
+
+<!-- =================== LACTATION: MICRONUTRIENTS =================== -->
+<section class="pg" data-eb="Lactation">
+  <div class="bd fl col" style="gap:12px">
+    <div><h2 class="h1">Lactation · Micronutrients</h2><div class="rule" style="margin-bottom:0"></div></div>
+    <div class="card or fl ac" style="padding:12px 20px;gap:14px"><span style="font-size:40px;font-family:Arial;line-height:1">&#8593;&#8593;</span><span class="tx2" style="font-size:22px">Micronutrients over requirement of pregnancy :</span></div>
+    <div class="g5">
+      <div class="tt vc"><div class="elx" style="width:74px;height:74px;font-size:34px">A</div><span>Vitamin A</span></div>
+      <div class="tt vc"><div class="elx" style="width:74px;height:74px;font-size:30px">B12</div><span>Vitamin B 12</span></div>
+      <div class="tt vc"><div class="elx" style="width:74px;height:74px;font-size:34px">C</div><span>Vitamin C</span></div>
+      <div class="tt vc"><div class="elx" style="width:74px;height:74px;font-size:34px">E</div><span>Vitamin E</span></div>
+      <div class="tt vc"><div class="elx pu" style="width:74px;height:74px;font-size:34px">B7</div><span>biotin</span></div>
+      <div class="tt vc"><div class="elx pu" style="width:74px;height:74px;font-size:34px">Cr</div><span>chromium</span></div>
+      <div class="tt vc"><div class="elx pu" style="width:74px;height:74px;font-size:34px">I</div><span>iodine</span></div>
+      <div class="tt vc"><div class="elx pu" style="width:74px;height:74px;font-size:34px">Zn</div><span>zinc</span></div>
+      <div class="tt vc"><div class="elx pu" style="width:74px;height:74px;font-size:34px">Se</div><span>selenium</span></div>
+      <div class="tt vc"><div class="elx" style="width:74px;height:74px;font-size:34px">B2</div><span>riboflavin</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== LACTATION: BREASTFEEDING BENEFITS (AR) =================== -->
+<section class="pg" data-eb="Lactation">
+  <div class="bd fl col" style="gap:10px">
+    <div class="xh"><div><h2>فوائد الرضاعة الطبيعية</h2><div class="rule"></div></div><span class="pill" style="font-size:12px">BREASTFEEDING</span></div>
+    <div class="bnf">
+      <div class="col2 on">
+        <h3><span class="bdg"><i data-i="baby"></i></span>للطفل</h3>
+        <div class="it2">تغذية ومثالية جاهزة دائما</div>
+        <div class="it2">غذاء معقم وسهل الهضم</div>
+        <div class="it2">تقوية عضلات الفم والنمو السليم لفك الطفل</div>
+        <div class="it2">ازدياد الارتباط بالأم</div>
+        <div class="it2">الوقاية من أمراض الحساسية الغذائية</div>
+      </div>
+      <div class="col2">
+        <h3><span class="bdg"><i data-i="female"></i></span>للأم</h3>
+        <div class="it2">تقوية العلاقة</div>
+        <div class="it2">تمنع تحجر الثدي</div>
+        <div class="it2">تساعد على عودة الرحم للحجم الطبيعي بعد الولادة بفضل إفراز هرمون الأوكسيتوسين</div>
+        <div class="it2">تساعد الأم على سرعة استعادة وزنها الطبيعي</div>
+        <div class="it2">انخفاض معدل الإصابة بسرطان الثدي والمبيض وهشاشة العظام</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== LACTATION: HERBS (AR) =================== -->
+<section class="pg open" data-eb="Lactation" style="--pw:200px">
+  <div class="panel pp" style="width:200px"><img class="pimg" src="img/spices.jpg" style="object-position:30% 50%" alt=""></div>
+  <div class="bd fl col" style="gap:9px">
+    <div class="xh"><div><h2>أعشاب تزيد من إدرار الحليب</h2><div class="rule"></div></div><span class="pill" style="font-size:12px">HERBS</span></div>
+    <div class="hb on" style="flex:1.5"><div class="hn"><i class="nn">1</i><b>الشمر</b></div><div class="hd3 q">2 ملعقة صغيرة من بذور الشمر بعد طحنها مع كوب ماء مغلي .. وتنقع به البذور لمدة 10 دقائق ويشرب مرتين لـ 3 مرات يوميا</div></div>
+    <div class="hb" style="flex:1"><div class="hn"><i class="nn">2</i><b>الحلبة</b></div><div class="hd3 q">1-2 كوب من مغلي بذور الحلبة</div></div>
+    <div class="hb" style="flex:1.2"><div class="hn"><i class="nn">3</i><b>الكراوية</b></div><div class="hd3 q">2-3 كوب يوميا : تطحن بذور الكراوية وتنقع في ماء مغلي لمدة 15&nbsp;ق</div></div>
+    <div class="hb" style="flex:.8"><div class="hn" style="width:auto;flex-direction:row;align-items:center;gap:12px"><i class="nn" style="margin:0">4</i><b>شوربة العدس</b></div></div>
+  </div>
+</section>
+
+<!-- =================== BACK COVER =================== -->
+<section class="pg nohf cvt">
+  <div class="top"><div class="wm">CNC</div></div>
+  <div class="ttl" style="top:130px;line-height:1"><div style="font-size:104px"><span class="b" style="letter-spacing:-.02em">Thank</span> <span class="t">You</span></div></div>
+  <div class="wrule" style="top:276px"></div>
+  <div class="band">
+    <img src="../brand/horizontal.png" alt="Lifestyle Foundation">
+    <div class="sp"><span></span><div><b>Dr. Ahmed El-Khateeb</b><small>Consultant of Obesity &amp; Clinical Nutrition</small></div></div>
+    <div class="crs"><b>CNC</b><small>COMPREHENSIVE NUTRITION COURSE</small></div>
+  </div>
+</section>
+
+<script src="../cnc.js"></script>
+</body>
+</html>

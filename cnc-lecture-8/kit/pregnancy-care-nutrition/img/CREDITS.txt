@@ -1,0 +1,20 @@
+Photos in this lecture are reused from the kit photo library (no new downloads; Unsplash/Pexels were
+not reachable from the cloud session that built this deck). Original credits are in each source
+folder's img\CREDITS.txt. Downscaled to <= 1800 px.
+
+bran.jpg             <- anc-food-drug-interaction\img\bran.jpg
+dairy.jpg            <- anc-food-drug-interaction\img\dairy.jpg
+grapefruit.jpg       <- anc-food-drug-interaction\img\grapefruit.jpg
+iron.jpg             <- anc-food-drug-interaction\img\iron.jpg
+s-kit.jpg            <- diabetes-mnt\img\s-kit.jpg
+s-walking.jpg        <- diabetes-mnt\img\s-walking.jpg
+spices.jpg           <- hypertension-mnt\img\spices.jpg
+spinach.jpg          <- anc-food-drug-interaction\img\spinach.jpg
+u-cigarette.jpg      <- dyslipidaemia-mnt\img\u-cigarette.jpg
+u-eggs.jpg           <- diabetes-mnt\img\u-eggs.jpg
+u-fries.jpg          <- dyslipidaemia-mnt\img\u-fries.jpg
+u-milk.jpg           <- diabetes-mnt\img\u-milk.jpg
+u-salmon.jpg         <- dyslipidaemia-mnt\img\u-salmon.jpg
+u-walnuts.jpg        <- dyslipidaemia-mnt\img\u-walnuts.jpg
+u-water.jpg          <- dyslipidaemia-mnt\img\u-water.jpg
+veg-bowl.jpg         <- hypertension-mnt\img\veg-bowl.jpg

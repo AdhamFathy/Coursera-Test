@@ -1,0 +1,13 @@
+Photos in this lecture are reused from the kit photo library (no new downloads; Unsplash/Pexels were
+not reachable from the cloud session that built this deck). Original credits are in each source
+folder's img\CREDITS.txt. Downscaled to <= 1800 px.
+
+s-apples.jpg         <- diabetes-mnt\img\s-apples.jpg
+s-cyclist.jpg        <- diabetes-mnt\img\s-cyclist.jpg
+u-donuts.jpg         <- dyslipidaemia-mnt\img\u-donuts.jpg
+u-eggs.jpg           <- diabetes-mnt\img\u-eggs.jpg
+u-lab.jpg            <- diabetes-mnt\img\u-lab.jpg
+u-milk.jpg           <- diabetes-mnt\img\u-milk.jpg
+u-oliveoil.jpg       <- diabetes-mnt\img\u-oliveoil.jpg
+u-pasta.jpg          <- diabetes-mnt\img\u-pasta.jpg
+veg-bowl.jpg         <- hypertension-mnt\img\veg-bowl.jpg

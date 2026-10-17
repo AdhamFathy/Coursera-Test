@@ -1,0 +1,168 @@
+/* ---- lecture-specific (Childhood Nutrition) — shares the Pregnancy deck patterns ---- */
+/* stat tile: label + Thin number */
+.sx{position:relative;background:var(--os);border-radius:18px;padding:14px 22px;display:flex;flex-direction:column;justify-content:center;gap:4px;overflow:hidden;min-height:0}
+.sx .k{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--o)}
+.sx .v{font-size:76px;font-weight:100;line-height:1;letter-spacing:-.03em;color:var(--o);white-space:nowrap}
+.sx .v small{font-size:28px;font-weight:300;margin-left:6px;letter-spacing:0}
+.sx .v .up5{font-family:Arial,sans-serif;font-size:42px;font-weight:400;margin-right:6px;vertical-align:14px}
+.sx b{font-size:20px;color:var(--p);line-height:1.28;font-weight:700}
+.sx .bdg{position:absolute;right:18px;top:16px;width:54px;height:54px;background:#fff}
+.sx.on{background:var(--og)}
+.sx.on .k,.sx.on .v,.sx.on b{color:#fff}
+.sx.on .bdg{background:rgba(255,255,255,.22);color:#fff}
+.sx.wh{background:#fff;border:1.5px solid var(--line)}
+/* rows inside cards */
+.li{display:flex;align-items:center;gap:12px;background:#fff;border-radius:12px;padding:9px 16px;font-size:19px;font-weight:600;color:var(--p);line-height:1.35;min-height:0}
+.li .bdg{width:40px;height:40px;background:var(--os2)}
+.li .arr{color:var(--o)}
+.card.wh .li{background:var(--os)}
+.card.or .li{background:rgba(255,255,255,.18);color:#fff}
+.card.or .li .bdg{background:rgba(255,255,255,.22);color:#fff}
+.card.or .li .arr{color:#fff}
+.li.fx{flex:1}
+.tx2{font-size:20px;line-height:1.45;font-weight:600;color:var(--p)}
+.card.or .tx2{color:#fff}
+.ch3{display:flex;flex-wrap:wrap;gap:8px}
+.ch3 span{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:20px;padding:7px 16px 7px 12px;font-size:18px;font-weight:700;color:var(--p)}
+.ch3 span:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--o);flex:none}
+.card.wh .ch3 span{background:var(--os)}
+.card.or .ch3 span{background:rgba(255,255,255,.2);color:#fff}
+.card.or .ch3 span:before{background:#fff}
+/* numbered heading chip ("05 — Calcium & Vitamin D") */
+.nh{display:flex;align-items:center;gap:14px}
+.nh .nb{font-size:44px;font-weight:100;color:var(--o);line-height:.9;letter-spacing:-.03em}
+/* fork: one step -> several outcomes */
+.frk{display:flex;align-items:center;gap:10px}
+.frk .s{background:var(--og);color:#fff;border-radius:14px;padding:14px 18px;font-size:21px;font-weight:700;line-height:1.25;display:flex;align-items:center;text-align:center;justify-content:center;min-height:84px}
+.frk .s.lt{background:#fff;color:var(--p)}
+.frk .a{flex:none;color:var(--o);display:flex}
+.frk .a svg{width:30px;height:18px}
+.frk .outs{flex:1;display:grid;grid-auto-rows:1fr;gap:8px}
+.frk .outs > span{display:flex;align-items:center;gap:10px;background:#fff;border-radius:12px;padding:8px 16px;font-size:19px;font-weight:700;color:var(--p)}
+.frk .outs > span:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--o);flex:none}
+/* formula / big value tile */
+.fq{font-size:44px;font-weight:200;color:var(--o);letter-spacing:-.02em;line-height:1;white-space:nowrap}
+.fq b{font-weight:700;color:var(--p);font-size:26px;letter-spacing:0}
+/* element tile (P, Mg, Zn ...) on light cards */
+.elx{width:84px;height:84px;border-radius:18px;background:var(--og);color:#fff;display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:600;flex:none;letter-spacing:-.02em}
+.elx.pu{background:var(--p)}
+.elx.wh{background:#fff;color:var(--o)}
+/* complaint table (Arabic) */
+.cpl{display:flex;gap:12px;min-height:0}
+.cpl .lab{width:196px;flex:none;border-radius:16px;background:var(--og);color:#fff;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:16px 18px}
+.cpl .lab .bdg{width:52px;height:52px;background:rgba(255,255,255,.22);color:#fff}
+.cpl .lab b{font-size:25px;line-height:1.15}
+.cpl .lab small{font-family:"LS Ar",sans-serif;direction:rtl;text-align:right;font-size:16px;font-weight:600;line-height:1.55}
+.cpl .sol{flex:1;background:var(--os);border-radius:16px;padding:10px;display:grid;gap:8px;min-height:0;grid-auto-rows:minmax(0,1fr)}
+.cpl .sol.c2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.cpl .sol > div{display:flex;align-items:center;gap:12px;background:#fff;border-radius:12px;padding:4px 16px;font-size:19px;font-weight:600;color:var(--p);line-height:1.4;min-height:0}
+.cpl .sol > div.ar{direction:rtl;text-align:right;font-family:"LS Ar",sans-serif;font-size:20px}
+.cpl .sol .en{font-family:"LS Mont",sans-serif;font-weight:600}
+.nn{font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--o);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"LS Mont",sans-serif;font-size:14px;font-weight:700;flex:none}
+.wl2{flex:1;border-bottom:2px dotted var(--o);min-height:24px;align-self:stretch}
+.ar .en,.en{font-family:"LS Mont",sans-serif}
+/* Arabic two-column benefits */
+.bnf{direction:rtl;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;flex:1;min-height:0}
+.bnf .col2{border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:8px;background:var(--os);min-height:0}
+.bnf .col2.on{background:var(--og)}
+.bnf h3{margin:0 0 2px;display:flex;align-items:center;gap:12px;font-family:"LS Ar",sans-serif;font-size:26px;font-weight:700;color:var(--p)}
+.bnf .on h3{color:#fff}
+.bnf h3 .bdg{width:50px;height:50px;background:#fff}
+.bnf .on h3 .bdg{background:rgba(255,255,255,.22);color:#fff}
+.bnf .it2{flex:1;display:flex;align-items:center;gap:10px;background:#fff;border-radius:12px;padding:4px 14px;font-family:"LS Ar",sans-serif;font-size:19px;font-weight:600;color:var(--p);line-height:1.45;min-height:0}
+.bnf .it2:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--o);flex:none}
+.bnf .on .it2{background:rgba(255,255,255,.18);color:#fff}
+.bnf .on .it2:before{background:#fff}
+/* herb cards */
+.hb{direction:rtl;background:var(--os);border-radius:16px;padding:12px 18px;display:flex;align-items:center;gap:16px;min-height:0}
+.hb .hn{flex:none;width:150px;display:flex;flex-direction:column;gap:4px}
+.hb .hn i.nn{margin-bottom:2px}
+.hb .hn b{font-family:"LS Ar",sans-serif;font-size:28px;font-weight:700;color:var(--p);line-height:1.2}
+.hb .hd3{flex:1;font-family:"LS Ar",sans-serif;font-size:20px;font-weight:600;color:var(--tx);line-height:1.6}
+.hb.on{background:var(--og)}
+.hb.on .hn b,.hb.on .hd3{color:#fff}
+.hb.on .nn{background:#fff;color:var(--o)}
+/* small source/credit line */
+.src2{font-size:13px;font-weight:600;color:var(--mut)}
+/* 10-tile grid helper */
+.g5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;flex:1;min-height:0;grid-auto-rows:minmax(0,1fr)}
+.g4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;flex:1;min-height:0;grid-auto-rows:minmax(0,1fr)}
+.g3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;flex:1;min-height:0;grid-auto-rows:minmax(0,1fr)}
+.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;flex:1;min-height:0;grid-auto-rows:minmax(0,1fr)}
+/* tile with icon + text (left aligned) */
+.tt{display:flex;align-items:center;gap:14px;background:var(--os);border-radius:16px;padding:10px 16px;font-size:19px;font-weight:600;color:var(--p);line-height:1.32;min-height:0}
+.tt .bdg{width:56px;height:56px;background:#fff;flex:none}
+.tt .no{font-size:26px;font-weight:200;color:var(--o);width:30px;flex:none;line-height:1}
+.tt.on{background:var(--og);color:#fff}
+.tt.on .no{color:#fff}
+.tt.on .bdg{background:rgba(255,255,255,.22);color:#fff}
+.tt.wh{background:#fff;border:1.5px solid var(--line)}
+.tt.wh .bdg{background:var(--os2)}
+.tt.vc{flex-direction:column;justify-content:center;text-align:center;gap:10px}
+.tt.vc .bdg{width:70px;height:70px}
+/* fit pass 1 */
+.ch3.sm span{font-size:16px;padding:6px 13px 6px 10px}
+.outs.nd > span:before{display:none}
+.frk .outs > span{font-size:17px;padding:6px 14px}
+.hb.on .n,.hb.on .fr{color:#fff}
+.hb .hd3{font-size:19px;line-height:1.55}
+.hb{padding:10px 18px}
+.li .bdg{flex:none}
+/* ---- Childhood-only patterns ---- */
+/* formula card */
+.fm{display:flex;flex-direction:column;justify-content:center;gap:14px;border-radius:18px;padding:20px 26px;background:var(--os);min-height:0}
+.fm .k{font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--o)}
+.fm .eq{display:flex;align-items:center;flex-wrap:wrap;gap:8px 12px;color:var(--p)}
+.fm .eq b{font-size:26px;font-weight:700}
+.fm .eq .op{font-size:44px;font-weight:200;color:var(--o);line-height:1}
+.fm .eq .ex{font-size:46px;font-weight:200;color:var(--o);letter-spacing:-.02em;line-height:1.1}
+.fm .eq .ex b{font-size:46px;font-weight:600}
+.fm.on{background:var(--og)}
+.fm.on .k,.fm.on .eq b,.fm.on .eq .op,.fm.on .eq .ex,.fm.on .eq .ex b{color:#fff}
+/* stage table */
+.stg{display:grid;grid-template-columns:112px repeat(3,minmax(0,1fr));gap:8px;flex:1;min-height:0}
+.stg .sh{border-radius:14px;background:var(--og);color:#fff;display:flex;align-items:center;justify-content:center;gap:10px;font-size:15px;font-weight:700;letter-spacing:.14em;padding:6px}
+.stg .sh b{font-size:34px;font-weight:200;letter-spacing:0;line-height:1}
+.stg .c0{background:none;color:var(--o);justify-content:flex-start;padding:6px 4px}
+.stg .rh{border-radius:14px;background:#fff;border:1.5px solid var(--oline);color:var(--p);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:10px 12px;font-size:18px;font-weight:700;gap:8px}
+.stg .rh .bdg{width:40px;height:40px}
+.stg .cell{border-radius:14px;background:var(--os);padding:10px 14px;display:flex;flex-direction:column;justify-content:center;gap:7px;min-height:0}
+.stg .cell > span{display:flex;gap:9px;align-items:flex-start;font-size:17px;font-weight:600;color:var(--p);line-height:1.3}
+.stg .cell > span:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--o);flex:none;margin-top:8px}
+.stg .cell.on{background:var(--og)}
+.stg .cell.on > span{color:#fff}
+.stg .cell.on > span:before{background:#fff}
+.stg .cell.em{background:#fff;border:1.5px dashed var(--oline)}
+/* growth rows */
+.gr{display:grid;grid-template-columns:260px 1fr 156px;align-items:center;gap:18px;border-bottom:1px solid var(--line);flex:1;min-height:0}
+.gr:last-child{border-bottom:0}
+.gr b{font-size:20px;color:var(--p);line-height:1.2}
+.gr small{display:block;font-size:14px;font-weight:600;color:var(--mut);margin-top:2px}
+.gr .tr{height:18px;border-radius:9px;background:var(--os);position:relative}
+.gr .tr i{position:absolute;left:0;top:0;bottom:0;border-radius:9px;background:var(--og)}
+.gr .tr i.rg{background:repeating-linear-gradient(90deg,var(--o) 0 10px,var(--o-hi) 10px 20px)}
+.gr .v{font-size:46px;font-weight:100;color:var(--o);text-align:right;line-height:1;letter-spacing:-.02em;white-space:nowrap}
+.gr .v small{display:inline;font-size:17px;font-weight:600;color:var(--o);margin-left:4px;letter-spacing:0}
+/* write-in table */
+.wt{display:grid;grid-template-columns:132px repeat(7,minmax(0,1fr));grid-template-rows:auto minmax(0,1fr) minmax(0,1fr);gap:7px;flex:1;min-height:0}
+.wt .hd4{background:var(--os);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:10px 4px;font-size:15px;font-weight:700;color:var(--p)}
+.wt .hd4 .elx{width:50px;height:50px;font-size:21px;border-radius:13px}
+.wt .rl{background:var(--og);color:#fff;border-radius:12px;display:flex;flex-direction:column;justify-content:center;padding:10px 14px;font-size:19px;font-weight:700;gap:6px}
+.wt .rl .bdg{width:38px;height:38px;background:rgba(255,255,255,.22);color:#fff}
+.wt .bx2{border:1.5px dashed var(--oline);border-radius:12px;background:#fff;background-image:repeating-linear-gradient(to bottom,transparent 0 36px,var(--oline) 36px 37.5px);background-position:0 8px}
+/* Arabic tip rows */
+.rw2.ar2{direction:rtl;text-align:right;font-family:"LS Ar",sans-serif;font-size:21px;font-weight:600}
+.rw2.ar2 .no2{font-family:"LS Mont",sans-serif;font-size:26px;font-weight:200;color:var(--o);width:30px;flex:none;text-align:center}
+.rw2.ar2.on .no2{color:#fff}
+/* yes / no circles */
+.yn{display:inline-flex;align-items:center;gap:8px;margin-left:14px;font-weight:600}
+.yn i{width:18px;height:18px;border-radius:50%;border:2px solid var(--o);display:inline-block;font-style:normal}
+/* fit pass 1 */
+.fm .eq .ex,.fm .eq .ex b{font-size:40px}
+.stg .sh b{font-weight:600;font-size:24px;letter-spacing:.02em}
+.gr{grid-template-columns:230px 1fr 200px}
+.gr .v{font-size:42px}
+.stg .cell > span{font-size:16.5px}
+.rw2.ar2{padding:4px 20px;font-size:21px}
+.rw2.ar2 .bdg{width:44px;height:44px}
+.fm .eq .ex,.fm .eq .ex b{font-size:34px;white-space:nowrap}
